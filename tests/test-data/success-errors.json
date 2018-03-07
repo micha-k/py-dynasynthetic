@@ -1,0 +1,1316 @@
+{
+    "meta": {
+        "bucket": "second",
+        "tstart": 0,
+        "tend": 0,
+        "list": "errors",
+        "dbtime": 4,
+        "apiversion": "49.0.0.201710130934.154877-5"
+    },
+    "data": [
+        {
+            "ecode": -1,
+            "icode": -1,
+            "edesc": "Unspecified Error",
+            "idesc": "MINT PLAYOUTCOME UNKNOWN",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 0,
+            "icode": 0,
+            "edesc": "Could Not Connect to Server",
+            "idesc": "Could not connect to server or server error",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 1,
+            "icode": 1,
+            "edesc": "Playback Timed Out",
+            "idesc": "Playback timed out",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 2,
+            "icode": 2,
+            "edesc": "Unspecified Error",
+            "idesc": "MINT PLAYOUTCOME STOPPED WB INTERACTION",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 3,
+            "icode": 3,
+            "edesc": "Unspecified Error",
+            "idesc": "MINT PLAYOUTCOME STOPPED BY USER",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 4,
+            "icode": 4,
+            "edesc": "Unspecified Error",
+            "idesc": "MINT PLAYOUTCOME END OF AUTOPLAY",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 5,
+            "icode": 5,
+            "edesc": "Unspecified Error",
+            "idesc": "MINT PLAYOUTCOME_END_OF_MANUALPLAY",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 6,
+            "icode": 6,
+            "edesc": "Unspecified Error",
+            "idesc": "MINT PLAYOUTCOME STOPPED BY SHELL",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 7,
+            "icode": 7,
+            "edesc": "Unspecified Error",
+            "idesc": "MINT PLAYOUTCOME STOPPED BY SHELL USER",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 8,
+            "icode": 8,
+            "edesc": "Unspecified Error",
+            "idesc": "MINT PLAYOUTCOME STOP ONERR ",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 9,
+            "icode": 9,
+            "edesc": "Unspecified Error",
+            "idesc": "MINT PLAYOUTCOME EXCEPTION",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 10,
+            "icode": 10,
+            "edesc": "Unspecified Error",
+            "idesc": "MINT PLAYOUTCOME XPRESSED VARS FAILED",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 11,
+            "icode": 11,
+            "edesc": "Unspecified Error",
+            "idesc": "MINT PLAYOUTCOME SUSPENSION ABORTED",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 12,
+            "icode": 12,
+            "edesc": "Unspecified Error",
+            "idesc": "MINT PLAYOUTCOME IE DIALOG",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 13,
+            "icode": 13,
+            "edesc": "Navigation to Next Page Failed",
+            "idesc": "Navigation to the next page failed",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 14,
+            "icode": 14,
+            "edesc": "Text-matching or VBA Test Failure",
+            "idesc": "A text-matching, server-response or VBA test failed",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 15,
+            "icode": 15,
+            "edesc": "Window not Found",
+            "idesc": "MINT PLAYOUTCOME IEI NOT FOUND",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 16,
+            "icode": 16,
+            "edesc": "Unspecified Error",
+            "idesc": "MINT PLAYOUTCOME SECURITY PROBLEM",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 17,
+            "icode": 17,
+            "edesc": "Unspecified Error",
+            "idesc": "MINT PLAYOUTCOME IGNORABLE END",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 18,
+            "icode": 18,
+            "edesc": "Unspecified Error",
+            "idesc": "MINT PLAYOUTCOME PAGE CHANGED END",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 19,
+            "icode": 19,
+            "edesc": "Text Matching Test Failed",
+            "idesc": "Text Matching Test Failed",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 20,
+            "icode": 20,
+            "edesc": "Server Response Test Failed",
+            "idesc": "Server Response Test Failed",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 21,
+            "icode": 21,
+            "edesc": "Scriptlet Test Failed",
+            "idesc": "MINT PLAYOUTCOME FAILED SCRIPTLET ",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 22,
+            "icode": 22,
+            "edesc": "VBA Test Failed",
+            "idesc": "MINT PLAYOUTCOME FAILED VBA ",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 299,
+            "icode": 299,
+            "edesc": "Request cancelled",
+            "idesc": "Aborted, Incomplete, or non-important error",
+            "egrp": "oth",
+            "esgrp": "abort"
+        },
+        {
+            "ecode": 300,
+            "icode": 300,
+            "edesc": "(Redirect) Multiple Choices",
+            "idesc": "Redirection - Multiple Choices",
+            "egrp": "oth",
+            "esgrp": "redir"
+        },
+        {
+            "ecode": 301,
+            "icode": 301,
+            "edesc": "(Redirect) Moved Permanently",
+            "idesc": "Redirection - Moved Permanently",
+            "egrp": "oth",
+            "esgrp": "redir"
+        },
+        {
+            "ecode": 302,
+            "icode": 302,
+            "edesc": "(Redirect) Found",
+            "idesc": "Redirection - Found",
+            "egrp": "oth",
+            "esgrp": "redir"
+        },
+        {
+            "ecode": 303,
+            "icode": 303,
+            "edesc": "(Redirect) See Other",
+            "idesc": "Redirection - See Other",
+            "egrp": "oth",
+            "esgrp": "redir"
+        },
+        {
+            "ecode": 304,
+            "icode": 304,
+            "edesc": "(Redirect) Not Modified",
+            "idesc": "Redirection - Not Modified",
+            "egrp": "oth",
+            "esgrp": "redir"
+        },
+        {
+            "ecode": 305,
+            "icode": 305,
+            "edesc": "(Redirect) Use Proxy",
+            "idesc": "Redirection - Use Proxy",
+            "egrp": "oth",
+            "esgrp": "redir"
+        },
+        {
+            "ecode": 306,
+            "icode": 306,
+            "edesc": "(Redirect) (Unused)",
+            "idesc": "Redirection - (Unused)",
+            "egrp": "oth",
+            "esgrp": "redir"
+        },
+        {
+            "ecode": 307,
+            "icode": 307,
+            "edesc": "(Redirect) Temporary Redirect",
+            "idesc": "Redirection - Temporary Redirect",
+            "egrp": "oth",
+            "esgrp": "redir"
+        },
+        {
+            "ecode": 398,
+            "icode": 398,
+            "edesc": "Retrying failed request attempt",
+            "idesc": "Redirection - Retry",
+            "egrp": "oth",
+            "esgrp": "redir"
+        },
+        {
+            "ecode": 399,
+            "icode": 399,
+            "edesc": "Authentication Challenge Failed",
+            "idesc": "Redirection - Authentication Challenge Error",
+            "egrp": "oth",
+            "esgrp": "redir"
+        },
+        {
+            "ecode": 400,
+            "icode": 400,
+            "edesc": "(Client) Bad Request",
+            "idesc": "Client Error - Bad Request",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 401,
+            "icode": 401,
+            "edesc": "(Client) Unauthorized",
+            "idesc": "Client Error - Unauthorized",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 402,
+            "icode": 402,
+            "edesc": "(Client) Payment Required",
+            "idesc": "Client Error - Payment Required",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 403,
+            "icode": 403,
+            "edesc": "(Client) Forbidden",
+            "idesc": "Client Error - Forbidden",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 404,
+            "icode": 404,
+            "edesc": "(Client) Not Found",
+            "idesc": "Client Error - Not Found",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 405,
+            "icode": 405,
+            "edesc": "(Client) Method Not Allowed",
+            "idesc": "Client Error - Method Not Allowed",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 406,
+            "icode": 406,
+            "edesc": "(Client) Not Acceptable",
+            "idesc": "Client Error - Not Acceptable",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 407,
+            "icode": 407,
+            "edesc": "(Client) Proxy Auth. Required",
+            "idesc": "Client Error - Proxy Authentication Required",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 408,
+            "icode": 408,
+            "edesc": "(Client) Request Timeout",
+            "idesc": "Client Error - Request Timeout",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 409,
+            "icode": 409,
+            "edesc": "(Client) Conflict",
+            "idesc": "Client Error - Conflict",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 410,
+            "icode": 410,
+            "edesc": "(Client) Gone",
+            "idesc": "Client Error - Gone",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 411,
+            "icode": 411,
+            "edesc": "(Client) Length Required",
+            "idesc": "Client Error - Length Required",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 412,
+            "icode": 412,
+            "edesc": "(Client) Precondition Failed",
+            "idesc": "Client Error - Precondition Failed",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 413,
+            "icode": 413,
+            "edesc": "(Client) Request Entity Too Large",
+            "idesc": "Client Error - Request Entity Too Large",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 414,
+            "icode": 414,
+            "edesc": "(Client) Request-URI Too Long",
+            "idesc": "Client Error - Request-URI Too Long",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 415,
+            "icode": 415,
+            "edesc": "(Client) Unsupported Media Type",
+            "idesc": "Client Error - Unsupported Media Type",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 416,
+            "icode": 416,
+            "edesc": "(Client) Req. Range Not Satisfiable",
+            "idesc": "Client Error - Requested Range Not Satisfiable",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 417,
+            "icode": 417,
+            "edesc": "(Client) Expectation Failed",
+            "idesc": "Client Error - Expectation Failed",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 422,
+            "icode": 422,
+            "edesc": "Unprocessable Entity",
+            "idesc": "Unprocessable Entity",
+            "egrp": "http",
+            "esgrp": "client"
+        },
+        {
+            "ecode": 429,
+            "icode": 429,
+            "edesc": "Too Many Requests",
+            "idesc": "Too Many Requests",
+            "egrp": "http",
+            "esgrp": "clinet"
+        },
+        {
+            "ecode": 500,
+            "icode": 500,
+            "edesc": "(Server) Internal Server Error",
+            "idesc": "Server Error - Internal Server Error",
+            "egrp": "http",
+            "esgrp": "server"
+        },
+        {
+            "ecode": 501,
+            "icode": 501,
+            "edesc": "(Server) Not Implemented",
+            "idesc": "Server Error - Not Implemented",
+            "egrp": "http",
+            "esgrp": "server"
+        },
+        {
+            "ecode": 502,
+            "icode": 502,
+            "edesc": "(Server) Bad Gateway",
+            "idesc": "Server Error - Bad Gateway",
+            "egrp": "http",
+            "esgrp": "server"
+        },
+        {
+            "ecode": 503,
+            "icode": 503,
+            "edesc": "(Server) Service Unavailable",
+            "idesc": "Server Error - Service Unavailable",
+            "egrp": "http",
+            "esgrp": "server"
+        },
+        {
+            "ecode": 504,
+            "icode": 504,
+            "edesc": "(Server) Gateway Timeout",
+            "idesc": "Server Error - Gateway Timeout",
+            "egrp": "http",
+            "esgrp": "server"
+        },
+        {
+            "ecode": 505,
+            "icode": 505,
+            "edesc": "(Server) HTTP Version Not Supported",
+            "idesc": "Server Error - HTTP Version Not Supported",
+            "egrp": "http",
+            "esgrp": "server"
+        },
+        {
+            "ecode": 997,
+            "icode": 997,
+            "edesc": "Unspecified Error",
+            "idesc": "MINT API Call Failed",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 998,
+            "icode": 998,
+            "edesc": "Unspecified Error",
+            "idesc": "COM Exception Occurred",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 999,
+            "icode": 999,
+            "edesc": "Test Timeout Exceeded",
+            "idesc": "Test time out exceeded",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 10001,
+            "icode": 10001,
+            "edesc": "Server Response Missing Status Line",
+            "idesc": "Server Response Missing Status Line",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 10052,
+            "icode": 10052,
+            "edesc": "Network Reset",
+            "idesc": "Network Reset",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 10053,
+            "icode": 10053,
+            "edesc": "(Socket) Connection Aborted",
+            "idesc": "Socket Connection Aborted",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 10054,
+            "icode": 10054,
+            "edesc": "(Socket) Connection Reset",
+            "idesc": "Socket Connection Reset",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 10060,
+            "icode": 10060,
+            "edesc": "(Socket) Connection Timeout",
+            "idesc": "Socket Connection Timeout",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 10061,
+            "icode": 10061,
+            "edesc": "(Socket) Connection Refused",
+            "idesc": "Socket Connection Refused",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 11001,
+            "icode": 11001,
+            "edesc": "Operation Failed. Socket Already Open or in Use",
+            "idesc": "Operation Failed. Socket Already Open or in Use",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 11002,
+            "icode": 11002,
+            "edesc": "Socket Creation Failed",
+            "idesc": "Socket Creation Failed",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 11003,
+            "icode": 11003,
+            "edesc": "Socket Connection Failed",
+            "idesc": "Socket Connection Failed",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 11004,
+            "icode": 11004,
+            "edesc": "Invalid Domain Name or Address",
+            "idesc": "Invalid Domain Name or Address",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 11005,
+            "icode": 11005,
+            "edesc": "Connection Timeout",
+            "idesc": "Connection Timeout",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12000,
+            "icode": 12000,
+            "edesc": "(Socket) Receive Timeout",
+            "idesc": "Socket Receive Timeout",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12003,
+            "icode": 12003,
+            "edesc": "Request Rejected by Server",
+            "idesc": "Request Rejected by Server",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12004,
+            "icode": 12004,
+            "edesc": "Invalid URL",
+            "idesc": "Invalid URL",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12005,
+            "icode": 12005,
+            "edesc": "Connection Terminated Before Completion",
+            "idesc": "Connection Terminated Before Completion",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12006,
+            "icode": 12006,
+            "edesc": "Invalid File Type Specified",
+            "idesc": "Invalid File Type Specified",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12007,
+            "icode": 12007,
+            "edesc": "Unable to Open Specified Data Source",
+            "idesc": "Unable to Open Specified Data Source",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12008,
+            "icode": 12008,
+            "edesc": "Timeout Occurred",
+            "idesc": "Timeout Occurred",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12009,
+            "icode": 12009,
+            "edesc": "Socket Receive Error",
+            "idesc": "Socket Receive Error",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12010,
+            "icode": 12010,
+            "edesc": "Data Source Write Error",
+            "idesc": "Data Source Write Error",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12011,
+            "icode": 12011,
+            "edesc": "Operation Aborted",
+            "idesc": "Operation Aborted",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12012,
+            "icode": 12012,
+            "edesc": "Unable to Connect to Server or Proxy",
+            "idesc": "Unable to Connect to Server or Proxy",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12013,
+            "icode": 12013,
+            "edesc": "DNS Lookup Failure",
+            "idesc": "DNS Lookup Failure",
+            "egrp": "net",
+            "esgrp": "dns"
+        },
+        {
+            "ecode": 12037,
+            "icode": 12037,
+            "edesc": "SSL certificate date is invalid",
+            "idesc": "SSL certificate date is invalid",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12038,
+            "icode": 12038,
+            "edesc": "SSL certificate common name is incorrect",
+            "idesc": "SSL certificate common name is incorrect",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12044,
+            "icode": 12044,
+            "edesc": "A certificate is required to complete client authentication",
+            "idesc": "A certificate is required to complete client authentication",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12055,
+            "icode": 12055,
+            "edesc": "The SSL certificate contains errors",
+            "idesc": "The SSL certificate contains errors",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12056,
+            "icode": 12056,
+            "edesc": "The SSL certificate was not revoked",
+            "idesc": "The SSL certificate was not revoked",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12169,
+            "icode": 12169,
+            "edesc": "The SSL certificate is invalid",
+            "idesc": "The SSL certificate is invalid",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 12170,
+            "icode": 12170,
+            "edesc": "The SSL certificate was revoked",
+            "idesc": "The SSL certificate was revoked",
+            "egrp": "net",
+            "esgrp": "net"
+        },
+        {
+            "ecode": 14001,
+            "icode": 14001,
+            "edesc": "Byte Limit Exceeded",
+            "idesc": "Object download violated agent limits",
+            "egrp": "oth",
+            "esgrp": "bytex"
+        },
+        {
+            "ecode": 15000,
+            "icode": 15000,
+            "edesc": "System related Errors",
+            "idesc": "System related Errors",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 15001,
+            "icode": 15001,
+            "edesc": "User Script Processing Failed",
+            "idesc": "User Script Processing Failed",
+            "egrp": "oth",
+            "esgrp": "scrt"
+        },
+        {
+            "ecode": 15100,
+            "icode": 15100,
+            "edesc": "SPDY Errors",
+            "idesc": "SPDY Errors",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 15200,
+            "icode": 15200,
+            "edesc": "SMS Errors",
+            "idesc": "SMS Errors",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 15300,
+            "icode": 15300,
+            "edesc": "Cache Errors",
+            "idesc": "Cache Errors",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 15400,
+            "icode": 15400,
+            "edesc": "FTP Errors",
+            "idesc": "FTP Errors",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 16013,
+            "icode": 16013,
+            "edesc": "IPv6 DNS Error",
+            "idesc": "IPv6 DNS Error",
+            "egrp": "net",
+            "esgrp": "dns"
+        },
+        {
+            "ecode": 16050,
+            "icode": 16050,
+            "edesc": "IPv4 Address found, IPv6 Expected",
+            "idesc": "IPv4 Address found, IPv6 Expected",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 16051,
+            "icode": 16051,
+            "edesc": "IPv6 Address found, IPv4 Expected",
+            "idesc": "IPv6 Address found, IPv4 Expected",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 18001,
+            "icode": 18001,
+            "edesc": "SSL Error",
+            "idesc": "SSL Error",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 19999,
+            "icode": 19999,
+            "edesc": "Unknown Connection Error",
+            "idesc": "Unknown Connection Error",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 20001,
+            "icode": 20001,
+            "edesc": "Expected color not found",
+            "idesc": "Expected color not found",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 20002,
+            "icode": 20002,
+            "edesc": "Expected text not found",
+            "idesc": "Expected text not found",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 20003,
+            "icode": 20003,
+            "edesc": "Expected window not found",
+            "idesc": "Expected window not found",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 20004,
+            "icode": 20004,
+            "edesc": "Expected image not found",
+            "idesc": "Expected image not found",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 20005,
+            "icode": 20005,
+            "edesc": "Page request did not complete",
+            "idesc": "Page request did not complete",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 20006,
+            "icode": 20006,
+            "edesc": "Date comparison failed",
+            "idesc": "Date comparison failed",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 20007,
+            "icode": 20007,
+            "edesc": "Text not recognized",
+            "idesc": "Text not recognized",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 20009,
+            "icode": 20009,
+            "edesc": "Step time exceeded threshold",
+            "idesc": "Step time exceeded threshold",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 20010,
+            "icode": 20010,
+            "edesc": "Script alert issued",
+            "idesc": "Script alert issued",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 20012,
+            "icode": 20012,
+            "edesc": "Step did not run",
+            "idesc": "Step did not run",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 20099,
+            "icode": 20099,
+            "edesc": "Internal error",
+            "idesc": "Internal error",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 30002,
+            "icode": 30002,
+            "edesc": "Excessive Number of Redirects ",
+            "idesc": "Object request had more than 10 redirects.",
+            "egrp": "oth",
+            "esgrp": "redir"
+        },
+        {
+            "ecode": 30003,
+            "icode": 30003,
+            "edesc": "HTML Parsing Error",
+            "idesc": "HTML Parsing Error",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 30005,
+            "icode": 30005,
+            "edesc": "An Unsupported SSL Version Was An Unsupported SSL Version Was Used",
+            "idesc": "Unsupported SSL Version Used",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 30500,
+            "icode": 30500,
+            "edesc": "Text Match Failed",
+            "idesc": "A Text Matching Test Failed",
+            "egrp": "cont",
+            "esgrp": "cont"
+        },
+        {
+            "ecode": 31000,
+            "icode": 31000,
+            "edesc": "Time Out Exceeded",
+            "idesc": "Timeout Exceeded",
+            "egrp": "tout",
+            "esgrp": "exec"
+        },
+        {
+            "ecode": 31001,
+            "icode": 31001,
+            "edesc": "Hard Timeout",
+            "idesc": "Hard Timeout",
+            "egrp": "tout",
+            "esgrp": "exec"
+        },
+        {
+            "ecode": 31002,
+            "icode": 31002,
+            "edesc": "Page Soft Timeout",
+            "idesc": "Page Soft Timeout",
+            "egrp": "tout",
+            "esgrp": "exec"
+        },
+        {
+            "ecode": 31003,
+            "icode": 31003,
+            "edesc": "Page Hard Timeout",
+            "idesc": "Page Hard Timeout",
+            "egrp": "tout",
+            "esgrp": "exec"
+        },
+        {
+            "ecode": 31004,
+            "icode": 31004,
+            "edesc": "Wait for page complete timeout",
+            "idesc": "Wait for Page Complete Timeout",
+            "egrp": "tout",
+            "esgrp": "exec"
+        },
+        {
+            "ecode": 31005,
+            "icode": 31005,
+            "edesc": "Network Wait Timeout",
+            "idesc": "Network Wait Timeout",
+            "egrp": "tout",
+            "esgrp": "wait"
+        },
+        {
+            "ecode": 31006,
+            "icode": 31006,
+            "edesc": "Wait for validate timeout",
+            "idesc": "Wait for validate Timeout",
+            "egrp": "tout",
+            "esgrp": "wait"
+        },
+        {
+            "ecode": 31007,
+            "icode": 31007,
+            "edesc": "Wait for event timeout",
+            "idesc": "Wait for event Timeout",
+            "egrp": "tout",
+            "esgrp": "wait"
+        },
+        {
+            "ecode": 39999,
+            "icode": 39999,
+            "edesc": "A General (UNKNOWN) Error Occurred",
+            "idesc": "Unknown Error",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 90001,
+            "icode": 90001,
+            "edesc": "Mobile connection failed",
+            "idesc": "Mobile connection failed",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 90101,
+            "icode": 90101,
+            "edesc": "SMS Send Error",
+            "idesc": "SMS Send Error",
+            "egrp": "oth",
+            "esgrp": "sms"
+        },
+        {
+            "ecode": 90102,
+            "icode": 90102,
+            "edesc": "SMS Receive Timeout",
+            "idesc": "SMS Receive Timeout",
+            "egrp": "oth",
+            "esgrp": "sms"
+        },
+        {
+            "ecode": 90103,
+            "icode": 90103,
+            "edesc": "SMS Send Error - Invalid SMS number",
+            "idesc": "SMS Send Error - Invalid SMS number",
+            "egrp": "oth",
+            "esgrp": "sms"
+        },
+        {
+            "ecode": 90104,
+            "icode": 90104,
+            "edesc": "SMS Send Error - Baseline mode is used ",
+            "idesc": "SMS Send Error - Baseline mode is used ",
+            "egrp": "oth",
+            "esgrp": "sms"
+        },
+        {
+            "ecode": 90105,
+            "icode": 90105,
+            "edesc": "SMS Send Error - SMS mode is disable in the configuration file",
+            "idesc": "SMS Send Error - SMS disabled for this carrier",
+            "egrp": "oth",
+            "esgrp": "sms"
+        },
+        {
+            "ecode": 90106,
+            "icode": 90106,
+            "edesc": "SMS Receive Error - Baseline mode is used ",
+            "idesc": "SMS Receive Error - Baseline mode is used ",
+            "egrp": "oth",
+            "esgrp": "sms"
+        },
+        {
+            "ecode": 90107,
+            "icode": 90107,
+            "edesc": "SMS Receive Error - SMS mode is disable in the configuration file ",
+            "idesc": "SMS Receive Error - SMS disabled in this carrier ",
+            "egrp": "oth",
+            "esgrp": "sms"
+        },
+        {
+            "ecode": 90108,
+            "icode": 90108,
+            "edesc": "Sending international SMS is forbidden",
+            "idesc": "SMS Send Error - International SMS is forbidden",
+            "egrp": "oth",
+            "esgrp": "sms"
+        },
+        {
+            "ecode": 90109,
+            "icode": 90109,
+            "edesc": "SMS Received Error - Content match test failed",
+            "idesc": "SMS Received Error - Content match test failed",
+            "egrp": "oth",
+            "esgrp": "sms"
+        },
+        {
+            "ecode": 99001,
+            "icode": 99001,
+            "edesc": "The modem is not connected or a wrong modem is connected",
+            "idesc": "The modem is not connected or a wrong modem is connected",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 99002,
+            "icode": 99002,
+            "edesc": "The SIM card is not inserted into modem",
+            "idesc": "The SIM card is not inserted into modem",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 99003,
+            "icode": 99003,
+            "edesc": "Modem problem -  Caused by a wrong configuration parameter",
+            "idesc": "Modem problem -  Caused by a wrong configuration parameter",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 99004,
+            "icode": 99004,
+            "edesc": "Modem SIM card is full",
+            "idesc": "Modem SIM card is full",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 99005,
+            "icode": 99005,
+            "edesc": "Modem reset - Caused by consecutive SMS timeouts",
+            "idesc": "Modem reset - Caused by consecutive SMS timeouts",
+            "egrp": "oth",
+            "esgrp": "sms"
+        },
+        {
+            "ecode": 99099,
+            "icode": 99099,
+            "edesc": "Modem Unknown Error ",
+            "idesc": "Modem Unknown Error ",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100501,
+            "icode": 100501,
+            "edesc": "Insecure Response",
+            "idesc": "The server's response was insecure (e.g. there was a cert error).",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100502,
+            "icode": 100502,
+            "edesc": "No private key error",
+            "idesc": "The server responded to a <keygen> with a generated client cert that browser agent doesn't have the matching private key for.",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100503,
+            "icode": 100503,
+            "edesc": "Add user certificate failure",
+            "idesc": "An error adding to the OS certificate database (e.g. OS X Keychain).",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100701,
+            "icode": 100701,
+            "edesc": "PKCS #12 import failed due to incorrect password",
+            "idesc": "PKCS #12 import failed due to incorrect password.",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100702,
+            "icode": 100702,
+            "edesc": "PKCS #12 import failed due to other error.",
+            "idesc": "PKCS #12 import failed due to other error.",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100703,
+            "icode": 100703,
+            "edesc": "CA import failed - not a CA cert",
+            "idesc": "CA import failed - not a CA cert.",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100704,
+            "icode": 100704,
+            "edesc": "Import failed - certificate already exists in database",
+            "idesc": "Import failed - certificate already exists in database.",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100705,
+            "icode": 100705,
+            "edesc": "CA import failed due to some other error",
+            "idesc": "CA import failed due to some other error.",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100706,
+            "icode": 100706,
+            "edesc": "Server certificate import failed due to some internal error",
+            "idesc": "Server certificate import failed due to some internal error.",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100707,
+            "icode": 100707,
+            "edesc": "PKCS #12 import failed due to invalid MAC",
+            "idesc": "PKCS #12 import failed due to invalid MAC.",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100708,
+            "icode": 100708,
+            "edesc": "PKCS #12 import failed due to invalid/corrupt file",
+            "idesc": "PKCS #12 import failed due to invalid/corrupt file.",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100709,
+            "icode": 100709,
+            "edesc": "PKCS #12 import failed due to unsupported features",
+            "idesc": "PKCS #12 import failed due to unsupported features.",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100710,
+            "icode": 100710,
+            "edesc": "Server-bound certificate generation failed",
+            "idesc": "Server-bound certificate generation failed.",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100711,
+            "icode": 100711,
+            "edesc": "Server-bound certificate generation failed",
+            "idesc": "Server-bound certificate generation failed.",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100712,
+            "icode": 100712,
+            "edesc": "Failure to export private key",
+            "idesc": "Failure to export private key.",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100713,
+            "icode": 100713,
+            "edesc": "The certificate database changed in some way",
+            "idesc": "The certificate database changed in some way.",
+            "egrp": "oth",
+            "esgrp": "oth"
+        },
+        {
+            "ecode": 100714,
+            "icode": 100714,
+            "edesc": "Self-signed certificate generation failed",
+            "idesc": "Self-signed certificate generation failed.",
+            "egrp": "oth",
+            "esgrp": "oth"
+        }
+    ]
+}

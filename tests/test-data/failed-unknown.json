@@ -1,0 +1,8 @@
+{
+    "error": "Oops, something went wrong",
+    "reason": {
+        "name": "UNKNOWNERROR",
+        "code": 11,
+        "description": "Unknown issue during API Call"
+    }
+}

@@ -1,0 +1,1346 @@
+{
+    "meta": {
+        "bucket": "second",
+        "tstart": 0,
+        "tend": 0,
+        "list": "dimensions",
+        "dbtime": 4,
+        "apiversion": "49.0.0.201710130934.154877-5"
+    },
+    "data": [
+        {
+            "mask": "tavail",
+            "name": "Affects availability or not",
+            "desc": "If the record has an error that affects availbility (1) or not (0)",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "insid",
+            "name": "Agent Instance ID",
+            "desc": "Agent Instance ID for this measurement",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "benchmark",
+            "name": "Benchmark Monitor",
+            "desc": "Whether a monitor is benchamrk (1) or not (0)",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "bname",
+            "name": "Browser Name",
+            "desc": "Browser Name used by this measurement",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "bvrsn",
+            "name": "Browser Version",
+            "desc": "Browser Version used for this measurement",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "brid",
+            "name": "Browser id",
+            "desc": "Browser id",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "city",
+            "name": "City",
+            "desc": "City where the agent is located",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "rcoid",
+            "name": "Connection ID",
+            "desc": "Connection ID for the element",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "contype",
+            "name": "Connection Type",
+            "desc": "Connection Type (Dial-Up / DSL)",
+            "type": "string",
+            "supportedproduct": [
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "cnttype",
+            "name": "Content Type",
+            "desc": "Content Type",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "cntkey",
+            "name": "Content type key",
+            "desc": "Unique key for content type",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "continent",
+            "name": "Continent",
+            "desc": "Continent where the agent is located",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "cglist",
+            "name": "Contributor Group",
+            "desc": "Contributor Group name with '_3' appended for third party and '_1' appended for first party.",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "country",
+            "name": "Country",
+            "desc": "Country where the agent is located",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "dtype",
+            "name": "Device Type",
+            "desc": "Device Type used for this measurement",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "dname",
+            "name": "Device name",
+            "desc": "Device name",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "dmname",
+            "name": "Domain",
+            "desc": "Domain Name",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "egrp",
+            "name": "Error Category",
+            "desc": "Error Category",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "ecode",
+            "name": "Error Code",
+            "desc": "Error code",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "edesc",
+            "name": "Error Code Description",
+            "desc": "Error code Description",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "esgrp",
+            "name": "Error Sub Category",
+            "desc": "Error Sub Category",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "freq",
+            "name": "Frequency of measurement",
+            "desc": "Frequency of measurement to be monitored",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "host",
+            "name": "Host",
+            "desc": "Host Name",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "hostmask",
+            "name": "Host IP Mask",
+            "desc": "Formatted Host Name and IP Subnet Mask combination",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "hostkey",
+            "name": "Host Key",
+            "desc": "Surrogate key for Host Name and IP Subnet Mask",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "scode",
+            "name": "Http Status Code",
+            "desc": "Http Status Code",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "ipmask",
+            "name": "IP Mask",
+            "desc": "IP sub net mask where the element is downloaded from",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "ipadr",
+            "name": "IP address",
+            "desc": "IP address where the element is downloaded from",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "ispid",
+            "name": "ISP ID",
+            "desc": "ISP ID",
+            "type": "number",
+            "supportedproduct": [
+                "backbone"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "ispip",
+            "name": "ISP IP",
+            "desc": "ISP IP",
+            "type": "string",
+            "supportedproduct": [
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "isp",
+            "name": "ISP/Carrier/Backbone",
+            "desc": "ISP/Carrier/Backbone",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "mimetype",
+            "name": "MIME Type",
+            "desc": "MIME Type in Media Type/Subtype format",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "machid",
+            "name": "Machine id",
+            "desc": "Machine id",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "machnm",
+            "name": "Machine name",
+            "desc": "Machine name",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "mediasubt",
+            "name": "Media Sub Type",
+            "desc": "Media Sub Type",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "mediatype",
+            "name": "Media Type",
+            "desc": "Media Type without a Subtype",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "mbgid",
+            "name": "Monitor Batch Group ID",
+            "desc": "Last mile/mobile monitor batch group identifier",
+            "type": "number",
+            "supportedproduct": [
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "mbgmid",
+            "name": "Monitor Batch Group Monitor ID",
+            "desc": "Last mile/mobile monitor batch group monitor identifier",
+            "type": "number",
+            "supportedproduct": [
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "mbgname",
+            "name": "Monitor Batch Group Name",
+            "desc": "Last mile/mobile monitor batch group name",
+            "type": "string",
+            "supportedproduct": [
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "mname",
+            "name": "Monitor Name",
+            "desc": "Monitor name of measurement",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "nwrate",
+            "name": "Network Rate ID",
+            "desc": "Network Rate ID",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "nwname",
+            "name": "Network Rate Name",
+            "desc": "Network Rate Name",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "nwspd",
+            "name": "Network Speed",
+            "desc": "Network Speed",
+            "type": "string",
+            "supportedproduct": [
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "nwtype",
+            "name": "Network Type",
+            "desc": "Network Type",
+            "type": "string",
+            "supportedproduct": [
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "nbsteps",
+            "name": "Number of steps",
+            "desc": "Number of monitor for this test",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "3catmsku",
+            "name": "Object 3rd Party Category Mask",
+            "desc": "Object 3rd party category mask",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "3catu",
+            "name": "Object 3rd Party Category Name",
+            "desc": "Object 3rd party category name",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "3cmpmsku",
+            "name": "Object 3rd Party Company Mask",
+            "desc": "Object 3rd party company mask",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "3cmpu",
+            "name": "Object 3rd Party Company Name",
+            "desc": "Object 3rd party company name",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "objen",
+            "name": "Object Enabled",
+            "desc": "Whether the test includes objects or not",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "objkey",
+            "name": "Object Key",
+            "desc": "Surrogate key of object with query component:  MD5 digest of monid + pgeid + reurl",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "objkeyig",
+            "name": "Object Key IG",
+            "desc": "Surrogate key of object without query component:  MD5 digest of monid + pgeid + reurlig",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "pgeid",
+            "name": "Page ID",
+            "desc": "Page ID of measurement",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "pgeky",
+            "name": "Page Key",
+            "desc": "Page Key of measurement",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "pgurl",
+            "name": "Page URL",
+            "desc": "Base URL for every page",
+            "type": "string",
+            "legacymask": "url",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page"
+            ]
+        },
+        {
+            "mask": "pttle",
+            "name": "Page title",
+            "desc": "Page title",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "popid",
+            "name": "Population ID",
+            "desc": "Last mile/mobile population identifier",
+            "type": "number",
+            "supportedproduct": [
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "popname",
+            "name": "Population Name",
+            "desc": "Last mile/mobile population name",
+            "type": "string",
+            "supportedproduct": [
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "poptype",
+            "name": "Population Type",
+            "desc": "Last mile/mobile population type (public/private)",
+            "type": "string",
+            "supportedproduct": [
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "mtype",
+            "name": "Product name",
+            "desc": "Product name of measurement such as backbone, lastmile, mobile",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "prtcldesc",
+            "name": "Protocol Description",
+            "desc": "Protocol Description",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "prtclkey",
+            "name": "Protocol key",
+            "desc": "Unique key for protocol",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "rectype",
+            "name": "Record Type",
+            "desc": "Record Type of the element",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "region",
+            "name": "Region",
+            "desc": "Region where the agent is located",
+            "type": "string",
+            "supportedproduct": [
+                "backbone"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "reurl",
+            "name": "Resource URL",
+            "desc": "Page Element level URL",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "reurlig",
+            "name": "Resource URL IG",
+            "desc": "Page Element level URL without query component (ignore parameters)",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "pubid",
+            "name": "SCOE Pub id",
+            "desc": "SCOE Pub id",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "scoea",
+            "name": "SCOE available",
+            "desc": "SCOE available (SCOE has been saved for this run)",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "scoee",
+            "name": "SCOE enabled",
+            "desc": "SCOE enabled (SCOE feature was enabled for this run)",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "scose",
+            "name": "SCOS enabled",
+            "desc": "SCOS enabled (SCOS feature was enabled for this run)",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "scrpid",
+            "name": "Script ID",
+            "desc": "Script ID",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "scrptmp",
+            "name": "Script updated timestamp",
+            "desc": "Script updated timestamp",
+            "type": "date",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "rseid",
+            "name": "Sequence ID",
+            "desc": "Element Sequence ID in the order of download",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "agtid",
+            "name": "Site ID",
+            "desc": "Site ID for this measurement",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "aname",
+            "name": "Site Name",
+            "desc": "Site Name for this measurement",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "monid",
+            "name": "Slot ID",
+            "desc": "Slot ID of measurement",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "stdt",
+            "name": "Started Date Time",
+            "desc": "Date and time stamp for the beginning of the page or object load",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "state",
+            "name": "State",
+            "desc": "State where the agent is located",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "rsseid",
+            "name": "Sub Sequence ID",
+            "desc": "Sub Sequence ID of the element",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "object"
+            ]
+        },
+        {
+            "mask": "tsucc",
+            "name": "Success or Error",
+            "desc": "If the record is a success measurement (1) or error (0)",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "lockey",
+            "name": "Test location key",
+            "desc": "Unique key for test location",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "locname",
+            "name": "Test location name",
+            "desc": "Test location name",
+            "type": "string",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "tgtid",
+            "name": "Trans ID",
+            "desc": "Trans ID of measurement",
+            "type": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        }
+    ]
+}

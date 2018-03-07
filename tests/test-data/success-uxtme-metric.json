@@ -1,0 +1,28 @@
+{
+    "meta": {
+        "bucket": "hour",
+        "bucketsize": "1",
+        "tstart": 1520280000000,
+        "tend": 1520287200000,
+        "monid": [
+            65432113
+        ],
+        "metrics": {
+            "uxtme": {
+                "desc": "Full User Experience time as reported by the browser",
+                "unit": "ms",
+                "name": "User Experience"
+            }
+        },
+        "limit": 100000,
+        "dbtime": 25,
+        "dbname": "db_dt_wa_raw_10 ",
+        "apiversion": "49.0.0.201710130934.154877-5"
+    },
+    "data": [
+        {
+            "uxtme": 7865.333333333333,
+            "mtime": 1520280000000
+        }
+    ]
+}

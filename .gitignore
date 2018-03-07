@@ -1,0 +1,5 @@
+.tox/*
+.idea/*
+venv/*
+*.pyc
+.DS_Store

@@ -1,0 +1,8 @@
+{
+    "error": "Unauthorized by PRAPI/KSC",
+    "reason": {
+        "name": "CREDENTIALERROR",
+        "code": 7,
+        "description": "No data found for this user"
+    }
+}

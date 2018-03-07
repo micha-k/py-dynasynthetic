@@ -1,0 +1,28 @@
+{
+    "meta": {
+        "bucket": "hour",
+        "bucketsize": "1",
+        "tstart": 1520280000000,
+        "tend": 1520287200000,
+        "monid": [
+            65432113
+        ],
+        "metrics": {
+            "avail": {
+                "desc": "Average Availability of selected Measurements",
+                "unit": "%",
+                "name": "Availability"
+            }
+        },
+        "limit": 100000,
+        "dbtime": 2,
+        "dbname": "db_dt_wa_raw_10 ",
+        "apiversion": "49.0.0.201710130934.154877-5"
+    },
+    "data": [
+        {
+            "avail": 0.91234578,
+            "mtime": 1520280000000
+        }
+    ]
+}

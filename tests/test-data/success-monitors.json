@@ -1,0 +1,72 @@
+{
+    "meta": {
+        "bucket": "second",
+        "tstart": 0,
+        "tend": 0,
+        "list": "monitors",
+        "dbtime": 3,
+        "apiversion": "49.0.0.201710130934.154877-5"
+    },
+    "data": [
+        {
+            "monid": 65432111,
+            "mname": "Flugbuchungsseite",
+            "nbsteps": 6,
+            "mtype": "backbone",
+            "modtmp": "2018-02-09T07:56:26.023Z",
+            "mbgid": null,
+            "mbgmid": null,
+            "bname": "Chrome",
+            "mcreated": "2018-02-09T07:56:26.020Z",
+            "mfrequency": 3600
+        },
+        {
+            "monid": 65432112,
+            "mname": "www.schallplatten-onlineshop.de",
+            "nbsteps": 9,
+            "mtype": "backbone",
+            "modtmp": "2018-02-19T17:48:24.226Z",
+            "mbgid": null,
+            "mbgmid": null,
+            "bname": "Chrome",
+            "mcreated": "2018-02-19T17:48:24.216Z",
+            "mfrequency": 900
+        },
+        {
+            "monid": 65432113,
+            "mname": "Rock n Roll Page",
+            "nbsteps": 5,
+            "mtype": "backbone",
+            "modtmp": "2018-02-19T17:49:26.030Z",
+            "mbgid": null,
+            "mbgmid": null,
+            "bname": "Chrome",
+            "mcreated": "2018-02-19T17:48:24.290Z",
+            "mfrequency": 900
+        },
+        {
+            "monid": 65432114,
+            "mname": "Blau Ist Das Meer Seite",
+            "nbsteps": 5,
+            "mtype": "backbone",
+            "modtmp": "2018-02-19T17:49:23.706Z",
+            "mbgid": null,
+            "mbgmid": null,
+            "bname": "Chrome",
+            "mcreated": "2018-02-19T17:48:24.356Z",
+            "mfrequency": 900
+        },
+        {
+            "monid": 65432115,
+            "mname": "www.holla-the-woodferry.de",
+            "nbsteps": 5,
+            "mtype": "backbone",
+            "modtmp": "2018-02-19T17:49:21.846Z",
+            "mbgid": null,
+            "mbgmid": null,
+            "bname": "Chrome",
+            "mcreated": "2018-02-19T17:48:24.423Z",
+            "mfrequency": 900
+        }
+    ]
+}

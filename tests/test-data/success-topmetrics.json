@@ -1,0 +1,879 @@
+{
+    "meta": {
+        "bucket": "second",
+        "tstart": 0,
+        "tend": 0,
+        "list": "topmetrics",
+        "dbtime": 3,
+        "apiversion": "49.0.0.201710130934.154877-5"
+    },
+    "data": [
+        {
+            "mask": "avail",
+            "name": "Availability",
+            "desc": "Average Availability of selected Measurements",
+            "unit": "%",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ]
+        },
+        {
+            "mask": "cdtme",
+            "name": "Content Download / Receive time",
+            "desc": "Time to download all remaining bytes from the server",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page",
+                "object"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "cdtms",
+            "name": "Content Download / Receive time Sum",
+            "desc": "Time to download all remaining bytes from the server. At test and page level, this metric returns the average of the sum per measurement run.",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "dnstm",
+            "name": "DNS",
+            "desc": "DNS duration",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page",
+                "object"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "dnstms",
+            "name": "DNS Sum",
+            "desc": "DNS duration. At test and page level, this metric returns the average of the sum per measurement run.",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "dmcpt",
+            "name": "DOM Complete",
+            "desc": "Time from the start of page navigation to completion of content processing",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "dmcen",
+            "name": "DOM Content Loading End",
+            "desc": "DOM content loading delta",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "dmcst",
+            "name": "DOM Content Loading Start",
+            "desc": "Time from the start of page navigation to when the domContentLoaded event is fired",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "dmint",
+            "name": "DOM Interactive",
+            "desc": "Time from the start of the page navigation to DOM Interactive (current document status : interactive)",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "dmlod",
+            "name": "DOM loading start",
+            "desc": "Time from the start of page navigation to the start of processing content (loading DOM)",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "unlen",
+            "name": "Dom Unload End",
+            "desc": "Time from start to end of the unload event",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "unlst",
+            "name": "Dom Unload Start",
+            "desc": "Time from the start of page navigation to the start of the unload event",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "nelem",
+            "name": "Elements count",
+            "desc": "Number of elements",
+            "unit": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            }
+        },
+        {
+            "mask": "fbtme",
+            "name": "First Byte",
+            "desc": "Time taken from the user initiating the request to the first byte of the response.",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page",
+                "object"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "fbtms",
+            "name": "First Byte Sum",
+            "desc": "Time taken from the user initiating the request to the first byte of the response. At test and page level, this metric returns the average of the sum per measurement run.",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "tcptm",
+            "name": "Initial Connection",
+            "desc": "Time to open a TCP/IP connection",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "tcptms",
+            "name": "Initial Connection Sum",
+            "desc": "Time to open a TCP/IP connection. At test and page level, this metric returns the average of the sum per measurement run.",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "ldeen",
+            "name": "Load Event End",
+            "desc": "Time from start to end of the load event",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "ldest",
+            "name": "Load Event Start",
+            "desc": "Time from the start of the page navigation to start of the load event",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "ssltm",
+            "name": "SSL time",
+            "desc": "Time requires for TLS/SSL negotiation",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "page",
+                "object"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "ssltms",
+            "name": "SSL time Sum",
+            "desc": "Time requires for TLS/SSL negotiation. At test and page level, this metric returns the average of the sum per measurement run.",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "thrpt",
+            "name": "Throughput",
+            "desc": "Throughput in kb/s",
+            "unit": "kb/s",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "nwtme",
+            "name": "Total Network time",
+            "desc": "Total time of all network traffic measured by the agent",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "nelem2",
+            "name": "Total number of objects",
+            "desc": "Total number of objects (oerrc2 + osuccc2)",
+            "unit": "number",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            }
+        },
+        {
+            "mask": "respt",
+            "name": "Total response time",
+            "desc": "Total response time (may include client time)",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page",
+                "object"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        },
+        {
+            "mask": "uxtme",
+            "name": "User Experience",
+            "desc": "Full User Experience time as reported by the browser",
+            "unit": "ms",
+            "supportedproduct": [
+                "backbone",
+                "lastmile",
+                "privatelastmile",
+                "mobile"
+            ],
+            "supportedlevel": [
+                "script",
+                "page"
+            ],
+            "supportedcomputation": {
+                "raw": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum",
+                    "stdev",
+                    "percentile",
+                    "median"
+                ],
+                "aggregated": [
+                    "min",
+                    "max",
+                    "avg",
+                    "sum"
+                ]
+            },
+            "successonly": true
+        }
+    ]
+}
