@@ -34,6 +34,9 @@ class CommandlineClient(object):
                                             passwordhash=self.args.password)
         self.dsa = DSA.DynatraceSyntheticAPI(datafeed_api=self.dda)
 
+        if self.args.proxy:
+            self.dda.set_proxy(proxy_address=self.args.proxy)
+
     def dispatch(self, raw_monitor_data=False):
         '''
         Dispatch actions based on user input
@@ -173,6 +176,8 @@ class CommandlineClient(object):
                                      help='Username to access data')
             parser_item.add_argument('-p', '--password', type=str, required=True,
                                      help='MD5 hash of the password to use')
+            parser_item.add_argument('--proxy', type=str,
+                                     help='Proxy to use webservice connection')
 
         return arg.parse_args()
 

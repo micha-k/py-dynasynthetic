@@ -101,5 +101,14 @@ class TestDynatraceDatafeedAPI(unittest.TestCase):
 
         self.assertEqual(dda.info(list='metrics'), self.json_metrics_success)
 
+    def test_set_proxy(self):
+        dda = DynatraceDatafeedAPI(login=self.login_exp,
+                                   passwordhash=self.passwordhash_exp)
+        dda.set_proxy('http://proxy.acme.org:123')
+
+        self.assertDictEqual(dda.proxies, {'http': 'http://proxy.acme.org:123',
+                                           'https': 'http://proxy.acme.org:123',
+                                           'ftp': False})
+
 if __name__ == '__main__':
     unittest.main()

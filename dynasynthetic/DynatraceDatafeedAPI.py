@@ -30,6 +30,10 @@ class DynatraceDatafeedAPI(object):
                            'pass': passwordhash,
                            'format': format}
 
+        self.proxies = {'http': False,
+                        'https': False,
+                        'ftp': False}
+
         self.mock = False
 
     def info(self, list):
@@ -93,6 +97,11 @@ class DynatraceDatafeedAPI(object):
 
         return self._rest_call()
 
+    def set_proxy(self, proxy_address):
+        self.proxies = {'http': proxy_address,
+                        'https': proxy_address,
+                        'ftp': False}
+
     def _get_rest_url(self):
         url = "%s://%s/%s" % ( self.api_proto,
                                self.api_host,
@@ -104,7 +113,7 @@ class DynatraceDatafeedAPI(object):
         url = self._get_rest_url()
 
         if not self.mock:
-            r = requests.get(url, params=self.api_params)
+            r = requests.get(url, params=self.api_params, proxies=self.proxies)
             call_result = { 'rc': r.status_code,
                             'body': r.json()}
         else:
