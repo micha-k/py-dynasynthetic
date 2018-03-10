@@ -1,4 +1,6 @@
 # Py-DS - Python Dynatrace Synthetic
+[![Build Status](https://travis-ci.org/micha-k/py-dynasynthetic.svg?branch=master)](https://travis-ci.org/micha-k/py-dynasynthetic)
+[![Coverage Status](https://coveralls.io/repos/github/micha-k/py-dynasynthetic/badge.svg?branch=master)](https://coveralls.io/github/micha-k/py-dynasynthetic?branch=master)
 
 ## Structure
 
