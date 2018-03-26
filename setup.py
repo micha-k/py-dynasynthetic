@@ -5,7 +5,7 @@ import os
 from setuptools import setup, find_packages
 import dynasynthetic
 
-PKG_VER = '0.1'
+PKG_VER = dynasynthetic.__version__
 
 
 def read(*filenames, **kwargs):
@@ -36,7 +36,6 @@ setup(
     download_url="http://github.com/micha-k/py-dynasynthetic/tarball/v" + PKG_VER,
     license='Apache Software License',
     author='micha-k',
-    author_email='dev@michaelkessel.de',
     platforms='any',
     install_requires=read('requirements.txt'),
     setup_requires=read('test-requirements.txt'),
