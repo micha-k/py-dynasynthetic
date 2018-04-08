@@ -97,6 +97,58 @@ class DynatraceDatafeedAPI(object):
 
         return self._rest_call()
 
+    def raw(self, metrics, monid, pgeid=None, rltime=None, tstart=None, tend=None,
+            group=None, header=None, sort=None, limit=None, skip=None,
+            format=None):
+
+        self.api_path.append('raw')
+
+        # check valid definition of timerange
+        if not (rltime or (tstart and tend)):
+            raise ValueError('No valid timerange parameters '
+                             '(rltime or tstar+tend) set')
+
+        # check timerange values
+        if rltime and not int(rltime) >0:
+           raise ValueError('rltime must be >0')
+        if tstart and not int(tstart) >0:
+           raise ValueError('tstart must be >0')
+        if tend and not int(tend) >0:
+           raise ValueError('tend must be >0')
+
+        # set relative OR absolute time
+        if rltime:
+            self.api_params['rltime'] = rltime
+        else:
+            self.api_params['tstart'] = tstart
+            self.api_params['tend'] = tend
+
+        self.api_params['metrics'] = metrics
+        self.api_params['monid'] = monid
+
+        if pgeid:
+            self.api_params['pgeid'] = pgeid
+
+        if group:
+            self.api_params['group'] = group
+
+        if header:
+            self.api_params['header'] = header
+
+        if sort:
+            self.api_params['sort'] = sort
+
+        if limit:
+            self.api_params['limit'] = limit
+
+        if skip:
+            self.api_params['skip'] = skip
+
+        if format:
+            self.api_params['format'] = format
+
+        return self._rest_call()
+
     def set_proxy(self, proxy_address):
         self.proxies = {'http': proxy_address,
                         'https': proxy_address,
