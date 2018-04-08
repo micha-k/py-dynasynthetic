@@ -11,7 +11,10 @@
 
 import argparse
 import logging
+import sys
+import re
 
+from dynasynthetic import Utils
 from dynasynthetic import DynatraceDatafeedAPI as DDA
 from dynasynthetic import DynatraceSyntheticAPI as DSA
 
@@ -52,6 +55,8 @@ class CommandlineClient(object):
             result_data, result_type = self.dispatch_measure()
         elif self.args.subparser == 'monitor':
             result_data, result_type = self.dispatch_monitor()
+        elif self.args.subparser == 'bulk':
+            result_data, result_type = self.dispatch_bulk()
 
         self.result_data = result_data
         self.result_type = result_type
@@ -101,6 +106,31 @@ class CommandlineClient(object):
 
         return monitor_results, 'single_line'
 
+    def dispatch_bulk(self):
+
+        date_pattern = re.compile("\d{4}\-\d{2}\-\d{2}")
+
+        if not date_pattern.match(self.args.begin):
+            self.error_and_exit('Begin value does not match pattern')
+        if not date_pattern.match(self.args.end):
+            self.error_and_exit('End value does not match pattern')
+
+        begin_datetime = '%s 00:00:00' % self.args.begin
+        begin = Utils.DateUtils.date_converter(raw_input=begin_datetime,
+                                               input_mask='%Y-%m-%d %H:%M:%S',
+                                               output_mask='%s')
+        end_datetime = '%s 23:59:59' % self.args.end
+        end = Utils.DateUtils.date_converter(raw_input=end_datetime,
+                                             input_mask='%Y-%m-%d %H:%M:%S',
+                                             output_mask='%s')
+
+        self.result_raw = self.dsa.export_raw(begin=int(begin)*1000,
+                                              end=int(end)*1000,
+                                              slot=self.args.slot,
+                                              page=self.args.limit)
+
+        return self.result_raw, 'multiline'
+
     def result_human_readable(self):
         '''
         Returns the result in a way, it can be directly printed to stdout
@@ -111,6 +141,8 @@ class CommandlineClient(object):
                 data=self.result_data)
         elif self.result_type == 'single_line':
             pass
+        elif self.result_type == 'multiline':
+            self.result_data = self.display_multiline(out=self.result_data)
 
         return self.result_data
 
@@ -121,6 +153,10 @@ class CommandlineClient(object):
         '''
 
         return self.result_raw
+
+    def error_and_exit(self, msg):
+        self.logger.error('Error: %s' % msg)
+        sys.exit(1)
 
     def parse_and_display_as_list(self, data, colList=None):
         """
@@ -139,6 +175,8 @@ class CommandlineClient(object):
 
         return "\n".join(out)
 
+    def display_multiline(self, out):
+        return "\n".join(out)
 
     def parse_arguments(self):
         desc = 'Commandline tool to access the Dynatrace Synthetic API'
@@ -170,8 +208,21 @@ class CommandlineClient(object):
         monitor_cmd.add_argument('-c', '--critical', type=float,
                                  help='Value for critical result')
 
+        # Bulkexport command
+        bulk_cmd = subparsers.add_parser('bulk',
+                                         help='Bulk export of test results')
+        bulk_cmd.add_argument('-b', '--begin', type=str, required=True,
+                              help='Begin of timerange (format: YYYY-MM-DD)')
+        bulk_cmd.add_argument('-e', '--end', type=str, required=True,
+                              help='End of timerange (format: YYYY-MM-DD)')
+        bulk_cmd.add_argument('-s', '--slot', type=int, required=True,
+                              help='Slot to select data from')
+        bulk_cmd.add_argument('-l', '--limit', type=int, required=False,
+                              help='Limit data to results of a single page')
+
+
         # Add to all commands
-        for parser_item in (list_cmd, measure_cmd, monitor_cmd):
+        for parser_item in (list_cmd, measure_cmd, monitor_cmd, bulk_cmd):
             parser_item.add_argument('-u', '--user', type=str, required=True,
                                      help='Username to access data')
             parser_item.add_argument('-p', '--password', type=str, required=True,

@@ -9,6 +9,12 @@
           in the toplevel domain 'de'.
 """
 
+import copy
+
+from datetime import datetime
+
+from dynasynthetic.Utils import DateUtils
+
 class DynatraceSyntheticAPI(object):
 
     AVAILABILITY_METRIC = 'avail'
@@ -158,6 +164,63 @@ class DynatraceSyntheticAPI(object):
 
         return self._reduct_object_list_by_filter(obj=api_raw['data'],
                                                   filter=filter)
+
+    def export_raw(self, begin, end, slot, page):
+        results = []
+        indexed_slots = {}
+        indexed_agents = {}
+        api_for_slots = copy.deepcopy(self.df_api)
+        api_for_agents = copy.deepcopy(self.df_api)
+        data_raw =  self.df_api.raw(metrics='avail,uxtime',
+                                    monid=slot,
+                                    tstart=begin,
+                                    tend=end,
+                                    pgeid=page)
+        data_slots = api_for_slots.info(list='slots')
+        data_agents = api_for_agents.info(list='agents')
+
+        # Index slots
+        for slot_item in data_slots['data']:
+            indexed_slots[slot_item['monid']] = slot_item
+
+        # Index agents
+        for agent_item in data_agents['data']:
+            indexed_agents[agent_item['agtid']] = agent_item
+
+        result_head = "%s\t%s\t%s\t%s\t%s\t%s\t%s" % \
+                      ('TIME', 'AGENT', 'TARGET_ID',
+                       'PERFORMANCE[uxtime]', 'ERROR',
+                       'CONTENT_ERROR', 'ALIAS')
+        results.append(result_head)
+
+        # enrich data lines
+        for entry in data_raw['data']:
+            date = datetime.fromtimestamp(int(entry['mtime']/1000))
+
+            # Looking up the slot and agent data
+            cur_slot = indexed_slots[entry['monid']]
+            cur_agent = indexed_agents[entry['agtid']]
+
+            # Page set?
+            page_string = ''
+            if 'pgeid' in entry.keys():
+                page_string = ' - %s (p %s)' % (cur_slot['pages'][entry['pgeid']]['uiName'],
+                                               entry['pgeid'])
+
+            slot_alias = '%s (%s, %s%s)' % (cur_slot['mname'], cur_slot['bname'], cur_slot['mtype'], page_string)
+
+            result_entry = "%s\t%s\t%s\t%s\t%s\t%s\t%s" \
+                           % (date.strftime('%d-%b-%Y %H:%M:%S'),
+                              cur_agent['aname'],
+                              entry['monid'],
+                              int(entry['avail'])/1000,
+                              entry['avail'],
+                              '0',
+                              slot_alias)
+
+            results.append(result_entry)
+
+        return results
 
     def _reduct_object_list_by_filter(self, obj, filter):
         reduced = []
