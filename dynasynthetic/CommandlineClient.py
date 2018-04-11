@@ -91,7 +91,7 @@ class CommandlineClient(object):
         return measure_result, 'single_line'
 
     def dispatch_monitor(self):
-        print(self.args)
+
         self.result_raw = self.dsa.monitor_aggregated_metric(
             metric=self.args.metric,
             monid=self.args.slot,
