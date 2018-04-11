@@ -189,20 +189,28 @@ class CommandlineClient(object):
         subparsers = arg.add_subparsers(dest='subparser')
 
         # Command list
-        list_cmd = subparsers.add_parser('list')
+        list_cmd = subparsers.add_parser('list',
+                                         help='Display several lists')
         list_cmd.add_argument('-l', '--list', required=True,
                               choices=self.dispatchable_lists.keys(),
                               help='Name of the list to display')
 
         # Command metric
-        measure_cmd = subparsers.add_parser('measure')
+        measure_cmd = subparsers.add_parser('measure',
+                                            help='Display a selected metric')
         measure_cmd.add_argument('-m', '--metric', type=str, required=True,
                                  help='Name of the metric to display')
         measure_cmd.add_argument('-s', '--slot', type=int, required=True,
                                  help='Slot to select data from')
+        measure_cmd.add_argument('-r', '--relative-time', type=int,
+                                 default=60, help='Timerange (in minutes) '
+                                                  'to consider for metric '
+                                                  'calculation')
 
         # Monitor command
-        monitor_cmd = subparsers.add_parser('monitor')
+        monitor_cmd = subparsers.add_parser('monitor',
+                                            help='Monitor metric with warning '
+                                                 'and critical values')
         monitor_cmd.add_argument('-m', '--metric', type=str, required=True,
                                  help='Name of the metric to display')
         monitor_cmd.add_argument('-s', '--slot', type=int, required=True,
