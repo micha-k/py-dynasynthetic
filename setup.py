@@ -29,6 +29,7 @@ setup(
         'check_dynasynthetic.py',
         'dynasynthetic_cli.py'
     ],
+    lib='/usr/lib/python2.6/site-packages',
     description='Access the Dynatrace Synthetic API',
     long_description=read('README.md'),
     version=PKG_VER,
