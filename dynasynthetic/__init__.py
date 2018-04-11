@@ -9,4 +9,5 @@
           in the toplevel domain 'de'.
 """
 
-pass
+__version__ = '0.2'
+
