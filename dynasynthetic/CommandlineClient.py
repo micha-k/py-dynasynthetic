@@ -29,6 +29,7 @@ class CommandlineClient(object):
     def __init__(self):
         self.logger = logging.getLogger('dynasynthetic-cli')
 
+        self.result_raw = {}
         self.result_data = {}
         self.result_type = None
 
@@ -45,7 +46,6 @@ class CommandlineClient(object):
         Dispatch actions based on user input
         '''
 
-        result_raw = {}
         result_data = {}
         result_type = None
 
@@ -79,7 +79,9 @@ class CommandlineClient(object):
     def dispatch_measure(self):
 
         self.result_raw = self.dsa.get_aggregated_metric(
-            metric=self.args.metric, monid=self.args.slot)
+            metric=self.args.metric, monid=self.args.slot,
+            relative_ms=self.args.relative_time*60*1000,
+            bucket_minutes=self.args.relative_time)
 
         measure_result = '%s: %s (in %s, %s)' % (self.result_raw['name'],
                                                  self.result_raw['value'],
@@ -89,12 +91,14 @@ class CommandlineClient(object):
         return measure_result, 'single_line'
 
     def dispatch_monitor(self):
-
+        print(self.args)
         self.result_raw = self.dsa.monitor_aggregated_metric(
             metric=self.args.metric,
             monid=self.args.slot,
             warn=self.args.warn,
-            crit=self.args.critical)
+            crit=self.args.critical,
+            relative_ms=self.args.relative_time*60*1000,
+            bucket_minutes=self.args.relative_time)
 
         monitor_results = '%s - [%s] %s: %s (in %s, %s)' \
                           % (self.result_raw['result_string'],
@@ -207,6 +211,10 @@ class CommandlineClient(object):
                                  help='Value for warning result')
         monitor_cmd.add_argument('-c', '--critical', type=float,
                                  help='Value for critical result')
+        monitor_cmd.add_argument('-r', '--relative-time', type=int,
+                                 default=60, help='Timerange (in minutes) '
+                                                  'to consider for metric '
+                                                  'calculation')
 
         # Bulkexport command
         bulk_cmd = subparsers.add_parser('bulk',
