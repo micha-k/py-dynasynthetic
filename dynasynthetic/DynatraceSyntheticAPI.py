@@ -171,7 +171,7 @@ class DynatraceSyntheticAPI(object):
         indexed_agents = {}
         api_for_slots = copy.deepcopy(self.df_api)
         api_for_agents = copy.deepcopy(self.df_api)
-        data_raw =  self.df_api.raw(metrics='avail,uxtime',
+        data_raw =  self.df_api.raw(metrics='avail,uxtme',
                                     monid=slot,
                                     tstart=begin,
                                     tend=end,
@@ -213,7 +213,7 @@ class DynatraceSyntheticAPI(object):
                            % (date.strftime('%d-%b-%Y %H:%M:%S'),
                               cur_agent['aname'],
                               entry['monid'],
-                              int(entry['avail'])/1000,
+                              float(int(entry['uxtme'])/1000),
                               entry['avail'],
                               '0',
                               slot_alias)
