@@ -169,13 +169,24 @@ class DynatraceSyntheticAPI(object):
         results = []
         indexed_slots = {}
         indexed_agents = {}
+
+        # Display pgeid if page is requested
+        group_val = None
+        if page:
+            group_val = 'pgeid'
+
         api_for_slots = copy.deepcopy(self.df_api)
         api_for_agents = copy.deepcopy(self.df_api)
-        data_raw =  self.df_api.raw(metrics='avail,uxtme',
+        data_raw =  self.df_api.raw(metrics='avail,respt',
                                     monid=slot,
                                     tstart=begin,
                                     tend=end,
-                                    pgeid=page)
+                                    pgeid=page,
+                                    group=group_val)
+
+        # this list is deprecated in v3.2 right now
+        api_for_agents.api_path = ['v3.3', 'synthetic']
+
         data_slots = api_for_slots.info(list='slots')
         data_agents = api_for_agents.info(list='agents')
 
@@ -184,12 +195,13 @@ class DynatraceSyntheticAPI(object):
             indexed_slots[slot_item['monid']] = slot_item
 
         # Index agents
-        for agent_item in data_agents['data']:
-            indexed_agents[agent_item['agtid']] = agent_item
+        for agent_item in data_agents['Sites']:
+            siteId = int(agent_item['Site']['siteID'])
+            indexed_agents[siteId] = agent_item['Site']
 
         result_head = "%s\t%s\t%s\t%s\t%s\t%s\t%s" % \
                       ('TIME', 'AGENT', 'TARGET_ID',
-                       'PERFORMANCE[uxtime]', 'ERROR',
+                       'PERFORMANCE[respt]', 'ERROR',
                        'CONTENT_ERROR', 'ALIAS')
         results.append(result_head)
 
@@ -204,17 +216,20 @@ class DynatraceSyntheticAPI(object):
             # Page set?
             page_string = ''
             if 'pgeid' in entry.keys():
-                page_string = ' - %s (p %s)' % (cur_slot['pages'][entry['pgeid']]['uiName'],
-                                               entry['pgeid'])
+                page_string = ' - %s [p %s]' % (cur_slot['pages'][str(entry['pgeid'])]['uiName'],
+                                               str(entry['pgeid']))
 
             slot_alias = '%s (%s, %s%s)' % (cur_slot['mname'], cur_slot['bname'], cur_slot['mtype'], page_string)
 
+            avail_status_mapping = { 0: "Availability Error",
+                                     1: "Success"}
+
             result_entry = "%s\t%s\t%s\t%s\t%s\t%s\t%s" \
-                           % (date.strftime('%d-%b-%Y %H:%M:%S'),
-                              cur_agent['aname'],
+                           % (date.strftime('%d-%b-%Y %H:%M:%S').upper(),
+                              cur_agent['name'],
                               entry['monid'],
-                              float(int(entry['uxtme'])/1000),
-                              entry['avail'],
+                              float(entry['respt'])/1000,
+                              avail_status_mapping[entry['avail']],
                               '0',
                               slot_alias)
 
