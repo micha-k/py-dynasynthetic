@@ -165,7 +165,10 @@ class DynatraceDatafeedAPI(object):
         url = self._get_rest_url()
 
         if not self.mock:
-            r = requests.get(url, params=self.api_params, proxies=self.proxies)
+            r = requests.get(url,
+                             params=self.api_params,
+                             proxies=self.proxies
+                             )
             call_result = { 'rc': r.status_code,
                             'body': r.json()}
         else:
