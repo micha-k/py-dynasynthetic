@@ -175,6 +175,10 @@ class DynatraceSyntheticAPI(object):
         if page:
             group_val = 'pgeid'
 
+        # More retries on bulk exports with longer sleep times
+        self.df_api.retry_count = 5
+        self.df_api.retry_backoff_factor = 0.5
+
         api_for_slots = copy.deepcopy(self.df_api)
         api_for_agents = copy.deepcopy(self.df_api)
         data_raw =  self.df_api.raw(metrics='avail,respt',

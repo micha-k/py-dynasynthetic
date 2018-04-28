@@ -10,6 +10,8 @@
 """
 
 import requests
+from requests.packages.urllib3.util.retry import Retry
+from requests.adapters import HTTPAdapter
 
 
 class DynatraceDatafeedAPI(object):
@@ -21,7 +23,9 @@ class DynatraceDatafeedAPI(object):
                  api_host='ultraapi-prod.dynatrace.com',
                  api_version='v3.2',
                  api_product='synthetic',
-                 format='json'):
+                 format='json',
+                 retry_count=2,
+                 retry_backoff_factor=0.1):
 
         self.api_proto = api_proto
         self.api_host = api_host
@@ -33,6 +37,9 @@ class DynatraceDatafeedAPI(object):
         self.proxies = {'http': False,
                         'https': False,
                         'ftp': False}
+
+        self.retry_count = retry_count
+        self.retry_backoff_factor = retry_backoff_factor
 
         self.mock = False
 
@@ -165,10 +172,17 @@ class DynatraceDatafeedAPI(object):
         url = self._get_rest_url()
 
         if not self.mock:
-            r = requests.get(url,
-                             params=self.api_params,
-                             proxies=self.proxies
-                             )
+
+            # Apply retry settings
+            # (https://stackoverflow.com/questions/15431044/can-i-set-max-retries-for-requests-request)
+            s = requests.Session()
+            retries = Retry(total=self.retry_count,
+                            backoff_factor=self.retry_backoff_factor)
+            s.mount('https://', HTTPAdapter(max_retries=retries))
+
+            r = s.get(url,
+                      params=self.api_params,
+                      proxies=self.proxies)
             call_result = { 'rc': r.status_code,
                             'body': r.json()}
         else:
