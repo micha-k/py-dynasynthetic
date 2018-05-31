@@ -25,7 +25,8 @@ class DynatraceDatafeedAPI(object):
                  api_product='synthetic',
                  format='json',
                  retry_count=2,
-                 retry_backoff_factor=0.1):
+                 retry_backoff_factor=0.1,
+                 timeout=3):
 
         self.api_proto = api_proto
         self.api_host = api_host
@@ -40,6 +41,7 @@ class DynatraceDatafeedAPI(object):
 
         self.retry_count = retry_count
         self.retry_backoff_factor = retry_backoff_factor
+        self.timeout = timeout
 
         self.mock = False
 
@@ -182,7 +184,8 @@ class DynatraceDatafeedAPI(object):
 
             r = s.get(url,
                       params=self.api_params,
-                      proxies=self.proxies)
+                      proxies=self.proxies,
+                      timeout=self.timeout)
             call_result = {'rc': r.status_code,
                            'body': r.json()}
         else:
