@@ -13,7 +13,6 @@ import copy
 
 from datetime import datetime
 
-from dynasynthetic.Utils import DateUtils
 
 class DynatraceSyntheticAPI(object):
 
@@ -102,15 +101,15 @@ class DynatraceSyntheticAPI(object):
 
         return metric_data
 
-    def get_aggregated_availability(self, monid,relative_ms=3600000,
+    def get_aggregated_availability(self, monid, relative_ms=3600000,
                                     bucket_minutes=60):
         return self.get_aggregated_metric(metric=self.AVAILABILITY_METRIC,
                                           monid=monid,
                                           relative_ms=relative_ms,
                                           bucket_minutes=bucket_minutes)
 
-    def get_aggregated_performance(self, monid,relative_ms=3600000,
-                                    bucket_minutes=60):
+    def get_aggregated_performance(self, monid, relative_ms=3600000,
+                                   bucket_minutes=60):
         return self.get_aggregated_metric(metric=self.PERFORMANCE_METRIC,
                                           monid=monid,
                                           relative_ms=relative_ms,
@@ -157,7 +156,6 @@ class DynatraceSyntheticAPI(object):
     def list_topmetrics(self):
         return self.list_metrics(topmetrics_only=True)
 
-
     def list_monitors(self):
         filter = ['monid', 'mname', 'bname', 'mfrequency', 'mtype', 'bname']
         api_raw = self.df_api.info(list='monitors')
@@ -181,12 +179,12 @@ class DynatraceSyntheticAPI(object):
 
         api_for_slots = copy.deepcopy(self.df_api)
         api_for_agents = copy.deepcopy(self.df_api)
-        data_raw =  self.df_api.raw(metrics='avail,respt',
-                                    monid=slot,
-                                    tstart=begin,
-                                    tend=end,
-                                    pgeid=page,
-                                    group=group_val)
+        data_raw = self.df_api.raw(metrics='avail,respt',
+                                   monid=slot,
+                                   tstart=begin,
+                                   tend=end,
+                                   pgeid=page,
+                                   group=group_val)
 
         # this list is deprecated in v3.2 right now
         api_for_agents.api_path = ['v3.3', 'synthetic']
@@ -221,12 +219,15 @@ class DynatraceSyntheticAPI(object):
             page_string = ''
             if 'pgeid' in entry.keys():
                 page_string = ' - %s [p %s]' % (cur_slot['pages'][str(entry['pgeid'])]['uiName'],
-                                               str(entry['pgeid']))
+                                                str(entry['pgeid']))
 
-            slot_alias = '%s (%s, %s%s)' % (cur_slot['mname'], cur_slot['bname'], cur_slot['mtype'], page_string)
+            slot_alias = '%s (%s, %s%s)' % (cur_slot['mname'],
+                                            cur_slot['bname'],
+                                            cur_slot['mtype'],
+                                            page_string)
 
-            avail_status_mapping = { 0: "Availability Error",
-                                     1: "Success"}
+            avail_status_mapping = {0: "Availability Error",
+                                    1: "Success"}
 
             result_entry = "%s\t%s\t%s\t%s\t%s\t%s\t%s" \
                            % (date.strftime('%d-%b-%Y %H:%M:%S').upper(),
