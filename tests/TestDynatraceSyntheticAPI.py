@@ -36,6 +36,9 @@ class TestDynatraceSyntheticfeedAPI(unittest.TestCase):
         with open('tests/test-data/success-uxtme-metric.json', 'r') as file:
             self.json_perf_metric_success = json.loads(file.read())
 
+        with open('tests/test-data/failed-unauthorized.json', 'r') as file:
+            self.json_failed_unauthorized = json.loads(file.read())
+
         self.avail_data_expect = {'value': 0.91234578,
                                   'unit': "%",
                                   'name': "Availability",
@@ -140,6 +143,15 @@ class TestDynatraceSyntheticfeedAPI(unittest.TestCase):
                                                     crit=0.98)
         self.assertEqual(avail['result_string'], dsa.CRITIAL_STRING)
         self.assertEqual(avail['result_numeric'], dsa.CRITICAL_NUMERIC)
+
+    def test_export_raw(self):
+        dda = DynatraceDatafeedAPI(login=self.login_exp,
+                                   passwordhash=self.passwordhash_exp)
+
+        dda._setMock(mock_data={'rc': 403,
+                                'body': self.json_failed_unauthorized})
+        dsa = DynatraceSyntheticAPI(datafeed_api=dda)
+        self.assertRaises(ValueError, dsa.export_raw, begin=1, end=2, slot=3, page=4)
 
 
 
