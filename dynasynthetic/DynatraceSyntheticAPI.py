@@ -122,20 +122,24 @@ class DynatraceSyntheticAPI(object):
                                     rltime=relative_ms, bucket='minute',
                                     bucketsize=bucket_minutes,
                                     format='json')
+        value = -1
+        if 'data' in api_raw:
+            if len(api_raw['data']) > 0:
+                if metric in api_raw['data'][0]:
+                    value = api_raw['data'][0][metric]
 
-        if api_raw['data'][0] and api_raw['data'][0][metric]:
-            value = api_raw['data'][0][metric]
-        else:
-            value = -1
-
-        if api_raw['meta']['metrics'][metric]:
-            name = api_raw['meta']['metrics'][metric]['name']
-            unit = api_raw['meta']['metrics'][metric]['unit']
-            info = api_raw['meta']['metrics'][metric]['desc']
-        else:
-            name = ''
-            unit = ''
-            info = ''
+        name = ''
+        unit = ''
+        info = ''
+        if 'meta' in api_raw:
+            if 'metrics' in api_raw['meta']:
+                if metric in api_raw['meta']['metrics']:
+                    if 'name' in api_raw['meta']['metrics'][metric]:
+                        name = api_raw['meta']['metrics'][metric]['name']
+                    if 'unit' in api_raw['meta']['metrics'][metric]:
+                        unit = api_raw['meta']['metrics'][metric]['unit']
+                    if 'desc' in api_raw['meta']['metrics'][metric]:
+                        info = api_raw['meta']['metrics'][metric]['desc']
 
         return {'value': value, 'unit': unit, 'name': name, 'info': info}
 
@@ -193,13 +197,19 @@ class DynatraceSyntheticAPI(object):
         data_agents = api_for_agents.info(list='agents')
 
         # Index slots
-        for slot_item in data_slots['data']:
-            indexed_slots[slot_item['monid']] = slot_item
+        if 'data' in data_slots:
+            for slot_item in data_slots['data']:
+                indexed_slots[slot_item['monid']] = slot_item
+        else:
+            raise ValueError("Missing field 'data' in data_slots")
 
         # Index agents
-        for agent_item in data_agents['Sites']:
-            siteId = int(agent_item['Site']['siteID'])
-            indexed_agents[siteId] = agent_item['Site']
+        if 'Sites' in data_agents:
+            for agent_item in data_agents['Sites']:
+                siteId = int(agent_item['Site']['siteID'])
+                indexed_agents[siteId] = agent_item['Site']
+        else:
+            raise ValueError("Missing field 'Sites' in data_agents")
 
         result_head = "%s\t%s\t%s\t%s\t%s\t%s\t%s" % \
                       ('TIME', 'AGENT', 'TARGET_ID',
@@ -208,37 +218,44 @@ class DynatraceSyntheticAPI(object):
         results.append(result_head)
 
         # enrich data lines
-        for entry in data_raw['data']:
-            date = datetime.fromtimestamp(int(entry['mtime']/1000))
+        if 'data' in data_raw:
+            for entry in data_raw['data']:
+                date = datetime.fromtimestamp(int(entry['mtime']/1000))
 
-            # Looking up the slot and agent data
-            cur_slot = indexed_slots[entry['monid']]
-            cur_agent = indexed_agents[entry['agtid']]
+                # check if we got all needed keys
+                if not all(k in entry for k in ('agtid', 'avail' 'monid', 'respt')):
+                    raise ValueError('Incomplete entry object: %s' % entry)
 
-            # Page set?
-            page_string = ''
-            if 'pgeid' in entry.keys():
-                page_string = ' - %s [p %s]' % (cur_slot['pages'][str(entry['pgeid'])]['uiName'],
-                                                str(entry['pgeid']))
+                # Looking up the slot and agent data
+                cur_slot = indexed_slots[entry['monid']]
+                cur_agent = indexed_agents[entry['agtid']]
 
-            slot_alias = '%s (%s, %s%s)' % (cur_slot['mname'],
-                                            cur_slot['bname'],
-                                            cur_slot['mtype'],
-                                            page_string)
+                # Page set?
+                page_string = ''
+                if 'pgeid' in entry.keys():
+                    page_string = ' - %s [p %s]' % (cur_slot['pages'][str(entry['pgeid'])]['uiName'],
+                                                    str(entry['pgeid']))
 
-            avail_status_mapping = {0: "Availability Error",
-                                    1: "Success"}
+                slot_alias = '%s (%s, %s%s)' % (cur_slot['mname'],
+                                                cur_slot['bname'],
+                                                cur_slot['mtype'],
+                                                page_string)
 
-            result_entry = "%s\t%s\t%s\t%s\t%s\t%s\t%s" \
-                           % (date.strftime('%d-%b-%Y %H:%M:%S').upper(),
-                              cur_agent['name'],
-                              entry['monid'],
-                              float(entry['respt'])/1000,
-                              avail_status_mapping[entry['avail']],
-                              '0',
-                              slot_alias)
+                avail_status_mapping = {0: "Availability Error",
+                                        1: "Success"}
 
-            results.append(result_entry)
+                result_entry = "%s\t%s\t%s\t%s\t%s\t%s\t%s" \
+                               % (date.strftime('%d-%b-%Y %H:%M:%S').upper(),
+                                   cur_agent['name'],
+                                   entry['monid'],
+                                   float(entry['respt'])/1000,
+                                   avail_status_mapping[entry['avail']],
+                                   '0',
+                                   slot_alias)
+
+                results.append(result_entry)
+        else:
+            raise ValueError("Missing field 'data' in data_raw: %s" % data_raw.keys())
 
         return results
 
