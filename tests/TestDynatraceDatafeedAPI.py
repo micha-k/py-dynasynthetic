@@ -22,9 +22,9 @@ class TestDynatraceDatafeedAPI(unittest.TestCase):
 
         self.login_exp = 'testlogin'
         self.passwordhash_exp = 'a1b2c3d4'
-        self.api_proto_exp ='testproto'
+        self.api_proto_exp = 'testproto'
         self.api_host_exp = 'test-host.com'
-        self.api_version_exp ='v1.0'
+        self.api_version_exp = 'v1.0'
         self.api_product_exp = 'testprod'
         self.format_exp = 'test_format'
 
@@ -80,6 +80,54 @@ class TestDynatraceDatafeedAPI(unittest.TestCase):
 
         self.assertFalse(dda.mock)
 
+    def test_trend(self):
+        dda = DynatraceDatafeedAPI(login=self.login_exp,
+                                   passwordhash=self.passwordhash_exp)
+        dda.mock = {'body': 'bla'}
+        self.assertRaises(ValueError, dda.trend, metrics='existing', monid=42)
+        self.assertRaises(ValueError, dda.trend, metrics='existing', monid=42,
+                          rltime=-23)
+        self.assertRaises(ValueError, dda.trend, metrics='existing', monid=42,
+                          rltime=1, tstart=-23)
+        self.assertRaises(ValueError, dda.trend, metrics='existing', monid=42,
+                          rltime=1, tstart=2, tend=-23)
+        dda.trend(metrics='existing', monid=42, tstart=2, tend=3,
+                  group='boarding A', header='kopflos', sort='bubble',
+                  limit='NEIN!', skip='der skipper', format='c:\\')
+        self.assertEqual(dda.api_params['tstart'], 2)
+        self.assertEqual(dda.api_params['tend'], 3)
+        self.assertEqual(dda.api_params['tend'], 3)
+        self.assertEqual(dda.api_params['group'], 'boarding A')
+        self.assertEqual(dda.api_params['header'], 'kopflos')
+        self.assertEqual(dda.api_params['sort'], 'bubble')
+        self.assertEqual(dda.api_params['limit'], 'NEIN!')
+        self.assertEqual(dda.api_params['skip'], 'der skipper')
+        self.assertEqual(dda.api_params['format'], 'c:\\')
+
+    def test_raw(self):
+        dda = DynatraceDatafeedAPI(login=self.login_exp,
+                                   passwordhash=self.passwordhash_exp)
+        dda.mock = {'body': 'bla'}
+        self.assertRaises(ValueError, dda.raw, metrics='existing', monid=42)
+        self.assertRaises(ValueError, dda.raw, metrics='existing', monid=42,
+                          rltime=-23)
+        self.assertRaises(ValueError, dda.raw, metrics='existing', monid=42,
+                          rltime=1, tstart=-1)
+        self.assertRaises(ValueError, dda.raw, metrics='existing', monid=42,
+                          rltime=1, tstart=2, tend=-23)
+        dda.raw(metrics='existing', monid=42, tstart=2, tend=3, pgeid=19,
+                group='boarding A', header='kopflos', sort='bubble',
+                limit='NEIN!', skip='der skipper', format='c:\\')
+        self.assertEqual(dda.api_params['tstart'], 2)
+        self.assertEqual(dda.api_params['tend'], 3)
+        self.assertEqual(dda.api_params['pgeid'], 19)
+        self.assertEqual(dda.api_params['group'], 'boarding A')
+        self.assertEqual(dda.api_params['header'], 'kopflos')
+        self.assertEqual(dda.api_params['sort'], 'bubble')
+        self.assertEqual(dda.api_params['limit'], 'NEIN!')
+        self.assertEqual(dda.api_params['skip'], 'der skipper')
+        self.assertEqual(dda.api_params['format'], 'c:\\')
+
     def test_mock(self):
         dda = DynatraceDatafeedAPI(login=self.login_exp,
                                    passwordhash=self.passwordhash_exp)
@@ -109,6 +157,7 @@ class TestDynatraceDatafeedAPI(unittest.TestCase):
         self.assertDictEqual(dda.proxies, {'http': 'http://proxy.acme.org:123',
                                            'https': 'http://proxy.acme.org:123',
                                            'ftp': False})
+
 
 if __name__ == '__main__':
     unittest.main()
