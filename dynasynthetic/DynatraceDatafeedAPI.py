@@ -61,12 +61,12 @@ class DynatraceDatafeedAPI(object):
                              '(rltime or tstar+tend) set')
 
         # check timerange values
-        if rltime and not int(rltime) >0:
-           raise ValueError('rltime must be >0')
-        if tstart and not int(tstart) >0:
-           raise ValueError('tstart must be >0')
-        if tend and not int(tend) >0:
-           raise ValueError('tend must be >0')
+        if rltime and not int(rltime) > 0:
+            raise ValueError('rltime must be > 0')
+        if tstart and not int(tstart) > 0:
+            raise ValueError('tstart must be > 0')
+        if tend and not int(tend) > 0:
+            raise ValueError('tend must be > 0')
 
         # set relative OR absolute time
         if rltime:
@@ -104,9 +104,9 @@ class DynatraceDatafeedAPI(object):
 
         return self._rest_call()
 
-    def raw(self, metrics, monid, pgeid=None, rltime=None, tstart=None, tend=None,
-            group=None, header=None, sort=None, limit=None, skip=None,
-            format=None):
+    def raw(self, metrics, monid, pgeid=None, rltime=None, tstart=None,
+            tend=None, group=None, header=None, sort=None, limit=None,
+            skip=None, format=None):
 
         self.api_path.append('raw')
 
@@ -116,12 +116,12 @@ class DynatraceDatafeedAPI(object):
                              '(rltime or tstar+tend) set')
 
         # check timerange values
-        if rltime and not int(rltime) >0:
-           raise ValueError('rltime must be >0')
-        if tstart and not int(tstart) >0:
-           raise ValueError('tstart must be >0')
-        if tend and not int(tend) >0:
-           raise ValueError('tend must be >0')
+        if rltime and not int(rltime) > 0:
+            raise ValueError('rltime must be > 0')
+        if tstart and not int(tstart) > 0:
+            raise ValueError('tstart must be > 0')
+        if tend and not int(tend) > 0:
+            raise ValueError('tend must be > 0')
 
         # set relative OR absolute time
         if rltime:
@@ -162,9 +162,9 @@ class DynatraceDatafeedAPI(object):
                         'ftp': False}
 
     def _get_rest_url(self):
-        url = "%s://%s/%s" % ( self.api_proto,
-                               self.api_host,
-                               '/'.join(self.api_path) )
+        url = "%s://%s/%s" % (self.api_proto,
+                              self.api_host,
+                              '/'.join(self.api_path))
 
         return url
 
@@ -183,8 +183,8 @@ class DynatraceDatafeedAPI(object):
             r = s.get(url,
                       params=self.api_params,
                       proxies=self.proxies)
-            call_result = { 'rc': r.status_code,
-                            'body': r.json()}
+            call_result = {'rc': r.status_code,
+                           'body': r.json()}
         else:
             call_result = self.mock
 

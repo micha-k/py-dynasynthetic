@@ -170,11 +170,11 @@ class CommandlineClient(object):
         out = []
 
         if not colList: colList = list(data[0].keys() if data else [])
-        myList = [colList] # 1st row = header
+        myList = [colList]   # 1st row = header
         for item in data: myList.append([str(item[col] or '') for col in colList])
-        colSize = [max(map(len,col)) for col in zip(*myList)]
+        colSize = [max(map(len, col)) for col in zip(*myList)]
         formatStr = ' | '.join(["{{:<{}}}".format(i) for i in colSize])
-        myList.insert(1, ['-' * i for i in colSize]) # Seperating line
+        myList.insert(1, ['-' * i for i in colSize])   # Seperating line
         for item in myList: out.append(formatStr.format(*item))
 
         return "\n".join(out)
@@ -235,7 +235,6 @@ class CommandlineClient(object):
                               help='Slot to select data from')
         bulk_cmd.add_argument('-l', '--limit', type=int, required=False,
                               help='Limit data to results of a single page')
-
 
         # Add to all commands
         for parser_item in (list_cmd, measure_cmd, monitor_cmd, bulk_cmd):

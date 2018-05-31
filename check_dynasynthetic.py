@@ -83,6 +83,7 @@ class CommandlineClientAsScalarContext(nagiosplugin.ScalarContext):
     def performance(self, metric, resource):
         return Performance(metric.name, metric.value)
 
+
 @nagiosplugin.guarded
 def main():
 
@@ -95,6 +96,7 @@ def main():
         CommandlineClientAsScalarContext('metric', data, False, False),
         DynatraceMetricSummary(data=data))
     check.main()
+
 
 if __name__ == '__main__':
     main()
