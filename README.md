@@ -18,9 +18,13 @@ Create virtual environment for development
 
         virtualenv -p python2.7 venv
         
-Use virtuel environment 
+Use virtual environment 
         
         source venv/bin/activate
+
+Install application runtime dependencies
+
+        pip install requests nagiosplugin
 
 Run tests using tox
 
