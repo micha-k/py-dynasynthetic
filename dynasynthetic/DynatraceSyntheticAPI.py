@@ -223,7 +223,7 @@ class DynatraceSyntheticAPI(object):
                 date = datetime.fromtimestamp(int(entry['mtime']/1000))
 
                 # check if we got all needed keys
-                if not all(k in entry for k in ('agtid', 'avail' 'monid', 'respt')):
+                if not all(k in entry for k in ('agtid', 'avail', 'monid', 'respt')):
                     raise ValueError('Incomplete entry object: %s' % entry)
 
                 # Looking up the slot and agent data
