@@ -16,6 +16,7 @@ import re
 
 from dynasynthetic import Utils
 from dynasynthetic import DynatraceDatafeedAPI as DDA
+from dynasynthetic import DynatraceDatafeedNewAPI as DDAnew
 from dynasynthetic import DynatraceSyntheticAPI as DSA
 
 
@@ -34,12 +35,18 @@ class CommandlineClient(object):
         self.result_type = None
 
         self.args = self.parse_arguments()
+        # Invoke Datafeeds for both Dynatrace backends into two SyntheticAPI objects
         self.dda = DDA.DynatraceDatafeedAPI(login=self.args.user,
                                             passwordhash=self.args.password)
+        self.ddanew = DDAnew.DynatraceDatafeedNewAPI(login=self.args.user,
+                                            passwordhash=self.args.password)
         self.dsa = DSA.DynatraceSyntheticAPI(datafeed_api=self.dda)
+        self.dsanew = DSA.DynatraceSyntheticAPI(datafeed_api=self.ddanew)
+        self.dsanew.set_new_api()
 
         if self.args.proxy:
             self.dda.set_proxy(proxy_address=self.args.proxy)
+            self.ddanew.set_proxy(proxy_address=self.args.proxy)
 
     def dispatch(self, raw_monitor_data=False):
         '''
@@ -90,15 +97,25 @@ class CommandlineClient(object):
 
         return measure_result, 'single_line'
 
+    # Warning: Only the "monitor" command can deal with the new Dynatrace backend!
     def dispatch_monitor(self):
 
-        self.result_raw = self.dsa.monitor_aggregated_metric(
-            metric=self.args.metric,
-            monid=self.args.slot,
-            warn=self.args.warn,
-            crit=self.args.critical,
-            relative_ms=self.args.relative_time*60*1000,
-            bucket_minutes=self.args.relative_time)
+        if self.args.oldapi:
+            self.result_raw = self.dsa.monitor_aggregated_metric(
+                metric=self.args.metric,
+                monid=self.args.slot,
+                warn=self.args.warn,
+                crit=self.args.critical,
+                relative_ms=self.args.relative_time*60*1000,
+                bucket_minutes=self.args.relative_time)
+        else:
+            self.result_raw = self.dsanew.monitor_aggregated_metric_new(
+                metric=self.args.metric,
+                monid=self.args.slot,
+                warn=self.args.warn,
+                crit=self.args.critical,
+                relative_ms=self.args.relative_time*60*1000,
+                bucket_minutes=self.args.relative_time)
 
         monitor_results = '%s - [%s] %s: %s (in %s, %s)' \
                           % (self.result_raw['result_string'],
@@ -244,7 +261,8 @@ class CommandlineClient(object):
                                      help='MD5 hash of the password to use')
             parser_item.add_argument('--proxy', type=str,
                                      help='Proxy to use webservice connection')
-
+            parser_item.add_argument('--oldapi', type=bool,
+                                     help='Select deprecated API', default=False)
         return arg.parse_args()
 
     def get_args(self):

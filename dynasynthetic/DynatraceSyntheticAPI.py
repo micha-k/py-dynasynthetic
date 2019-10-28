@@ -31,8 +31,12 @@ class DynatraceSyntheticAPI(object):
     UNKNOWN_STRING = 'UNKOWN'
     UNKNOWN_NUMERIC = 3
 
-    def __init__(self, datafeed_api):
+    def __init__(self, datafeed_api, new_api=False):
         self.df_api = datafeed_api
+        self.new_api = new_api
+
+    def set_new_api(self):
+        self.new_api = True
 
     def monitor_aggregated_availability(self, monid, warn, crit,
                                         relative_ms=3600000,
@@ -54,6 +58,20 @@ class DynatraceSyntheticAPI(object):
                                               relative_ms=relative_ms,
                                               bucket_minutes=bucket_minutes)
 
+    def monitor_aggregated_metric_new(self,
+                                  metric,
+                                  monid,
+                                  warn,
+                                  crit,
+                                  relative_ms=3600000,
+                                  bucket_minutes=60):
+
+        metric_data = self.get_aggregated_metric_new(metric=metric,
+                                                 monid=monid,
+                                                 relative_ms=relative_ms,
+                                                 bucket_minutes=bucket_minutes)
+        return self.assess_aggregated_metrics( metric_data, warn, crit)
+
     def monitor_aggregated_metric(self,
                                   metric,
                                   monid,
@@ -66,7 +84,9 @@ class DynatraceSyntheticAPI(object):
                                                  monid=monid,
                                                  relative_ms=relative_ms,
                                                  bucket_minutes=bucket_minutes)
+        return self.assess_aggregated_metrics(metric_data, warn, crit)
 
+    def assess_aggregated_metrics(self, metric_data, warn, crit):
         # Assess result based on alarm values
         result_string = self.UNKNOWN_STRING
         result_numeric = self.UNKNOWN_NUMERIC
@@ -115,6 +135,69 @@ class DynatraceSyntheticAPI(object):
                                           relative_ms=relative_ms,
                                           bucket_minutes=bucket_minutes)
 
+    def get_aggregated_metric_new(self, metric, monid, relative_ms=3600000,
+                              bucket_minutes=60):
+
+        api_raw = self.df_api.trend(metrics=metric, monid=monid,
+                                    rltime=relative_ms, bucket='minute',
+                                    bucketsize=bucket_minutes,
+                                    format='json')
+        meta_data_dict = self.df_api.get_meta(metric)
+        meta_data = meta_data_dict['data']
+        meta_metric = meta_data_dict['metric']
+
+        name = ''
+        unit = ''
+        info = ''
+
+        if 'metrics' in meta_data:
+            if 'meta' in meta_data['metrics'][meta_metric]:
+                if 'metricKey' in meta_data['metrics'][meta_metric]['meta']:
+                    name = meta_data['metrics'][meta_metric]['meta']['metricKey']
+
+                if 'displayName' in meta_data['metrics'][meta_metric]['meta']:
+                    info = meta_data['metrics'][meta_metric]['meta']['displayName']
+
+                if 'unit' in meta_data['metrics'][meta_metric]['meta']:
+                    unit = meta_data['metrics'][meta_metric]['meta']['unit']
+
+        value = -1
+        if 'metrics' in api_raw:
+            if 'series' in api_raw['metrics'][meta_metric]: # for resolution = '60m'
+                series = api_raw['metrics'][meta_metric]['series']
+                if 'values' in series[0]:
+                    if len(series[0]['values']):
+                        if 'value' in series[0]['values'][0]:
+                            value = series[0]['values'][0]['value']
+                # This is an evil hack: for availability we get two metrics (success and failure)
+                # and calculate the percentage. We determine this case by checking for a second
+                # entry in the metrics list.
+                if len(api_raw['metrics']) > 1:
+                    secondary_metric = api_raw['metrics'].keys()[1]
+                    if 'series' in api_raw['metrics'][secondary_metric]: # for resolution = '60m'
+                        secondary_value = -1
+                        series = api_raw['metrics'][secondary_metric]['series']
+                        if 'values' in series[0]:
+                            if len(series[0]['values']):
+                                if 'value' in series[0]['values'][0]:
+                                    secondary_value = series[0]['values'][0]['value']
+                        if secondary_value >= 0 :
+                            # Percentage of successful calls
+                            value = value/(value+secondary_value)
+            elif 'values' in api_raw['metrics'][meta_metric]: # for resolution = 'Inf'
+                if len(api_raw['metrics'][meta_metric]['values']) == 1:
+                    if 'value' in api_raw['metrics'][meta_metric]['values'][0]:
+                        value = api_raw['metrics'][meta_metric]['values'][0]['value']
+                if len(api_raw['metrics'].keys()) > 1:
+                    secondary_metric = api_raw['metrics'].keys()[1]
+                    if 'value' in api_raw['metrics'][secondary_metric]['values'][0]:
+                        secondary_value = api_raw['metrics'][secondary_metric]['values'][0]['value']
+                        value = value/(value+secondary_value)
+                        unit = "%"
+
+        return {'value': value, 'unit': unit, 'name': name, 'info': info}
+
+
     def get_aggregated_metric(self, metric, monid, relative_ms=3600000,
                               bucket_minutes=60):
 
@@ -127,7 +210,6 @@ class DynatraceSyntheticAPI(object):
             if len(api_raw['data']) > 0:
                 if metric in api_raw['data'][0]:
                     value = api_raw['data'][0][metric]
-
         name = ''
         unit = ''
         info = ''
@@ -223,7 +305,7 @@ class DynatraceSyntheticAPI(object):
                 date = datetime.fromtimestamp(int(entry['mtime']/1000))
 
                 # check if we got all needed keys
-                if not all(k in entry for k in ('agtid', 'avail' 'monid', 'respt')):
+                if not all(k in entry for k in ('agtid', 'avail', 'monid', 'respt')):
                     raise ValueError('Incomplete entry object: %s' % entry)
 
                 # Looking up the slot and agent data
