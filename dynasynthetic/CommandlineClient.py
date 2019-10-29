@@ -104,8 +104,8 @@ class CommandlineClient(object):
     # Warning: Only the "monitor" command can deal with the new Dynatrace backend!
     def dispatch_monitor(self):
 
-        if self.args.oldapi:
-            self.result_raw = self.dsa.monitor_aggregated_metric(
+        if self.args.newapi:
+            self.result_raw = self.dsanew.monitor_aggregated_metric_new(
                 metric=self.args.metric,
                 monid=self.args.slot,
                 warn=self.args.warn,
@@ -113,7 +113,7 @@ class CommandlineClient(object):
                 relative_ms=self.args.relative_time*60*1000,
                 bucket_minutes=self.args.relative_time)
         else:
-            self.result_raw = self.dsanew.monitor_aggregated_metric_new(
+            self.result_raw = self.dsa.monitor_aggregated_metric(
                 metric=self.args.metric,
                 monid=self.args.slot,
                 warn=self.args.warn,
@@ -265,7 +265,7 @@ class CommandlineClient(object):
                                      help='MD5 hash of the password to use or API-Token for new API')
             parser_item.add_argument('--proxy', type=str,
                                      help='Proxy to use webservice connection')
-            parser_item.add_argument('--oldapi', type=bool,
+            parser_item.add_argument('--newapi', type=bool,
                                      help='Select deprecated API', default=False)
             parser_item.add_argument('--scopemap', type=str,
                                      help='Table for mapping old API slot numbers to new API scopes',
