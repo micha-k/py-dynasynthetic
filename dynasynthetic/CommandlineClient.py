@@ -11,6 +11,7 @@
 
 import argparse
 import logging
+import json
 import sys
 import re
 
@@ -35,11 +36,14 @@ class CommandlineClient(object):
         self.result_type = None
 
         self.args = self.parse_arguments()
+        scope_map = json.load(open(self.args.scopemap,'r'))
+
         # Invoke Datafeeds for both Dynatrace backends into two SyntheticAPI objects
         self.dda = DDA.DynatraceDatafeedAPI(login=self.args.user,
                                             passwordhash=self.args.password)
         self.ddanew = DDAnew.DynatraceDatafeedNewAPI(login=self.args.user,
-                                            passwordhash=self.args.password)
+                                            passwordhash=self.args.password,
+                                            scopemap=scope_map)
         self.dsa = DSA.DynatraceSyntheticAPI(datafeed_api=self.dda)
         self.dsanew = DSA.DynatraceSyntheticAPI(datafeed_api=self.ddanew)
         self.dsanew.set_new_api()
@@ -258,11 +262,14 @@ class CommandlineClient(object):
             parser_item.add_argument('-u', '--user', type=str, required=True,
                                      help='Username to access data')
             parser_item.add_argument('-p', '--password', type=str, required=True,
-                                     help='MD5 hash of the password to use')
+                                     help='MD5 hash of the password to use or API-Token for new API')
             parser_item.add_argument('--proxy', type=str,
                                      help='Proxy to use webservice connection')
             parser_item.add_argument('--oldapi', type=bool,
                                      help='Select deprecated API', default=False)
+            parser_item.add_argument('--scopemap', type=str,
+                                     help='Table for mapping old API slot numbers to new API scopes',
+                                     default='scopemap.json')
         return arg.parse_args()
 
     def get_args(self):
