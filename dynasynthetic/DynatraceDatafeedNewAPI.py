@@ -17,7 +17,7 @@ class DynatraceDatafeedNewAPI(object):
                  api_host='hxc35241.live.dynatrace.com',
                  api_product="api",
                  format='json',
-                 scopemap = { 4711: ("DEADBEEFCAFEBABE", "dummy name for dynatrace check") },
+                 scopemap = { "4711": ("DEADBEEFCAFEBABE", "dummy name for dynatrace check") },
                  retry_count=2,
                  retry_backoff_factor=0.1,
                  timeout=3):
@@ -98,9 +98,14 @@ class DynatraceDatafeedNewAPI(object):
 
 ########################################
     def _remap_scope(self, monid):
+        #print("remap testing monid: '"+str(monid)+"'")
+        #print("remap testing key list '"+str(self.scope_map.keys())+"'")
         if self.scope_map.has_key(str(monid)):
+            #print("remap getting entry monid[0]")
             ent = self.scope_map[str(monid)][0]
+            #print("remapped to: "+str(ent))
         else:
+            #print("remap key list ELSE: "+str(self.scope_map.keys()))
             raise ValueError("Cannot map unknown monitor ID to new API.")
 
         return 'entity(SYNTHETIC_TEST-' + ent + ')'

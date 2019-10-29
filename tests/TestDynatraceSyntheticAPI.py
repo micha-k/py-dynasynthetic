@@ -13,6 +13,7 @@ import unittest
 import json
 
 from dynasynthetic.DynatraceDatafeedAPI import DynatraceDatafeedAPI
+from dynasynthetic.DynatraceDatafeedNewAPI import DynatraceDatafeedNewAPI
 from dynasynthetic.DynatraceSyntheticAPI import DynatraceSyntheticAPI
 
 
@@ -154,6 +155,18 @@ class TestDynatraceSyntheticfeedAPI(unittest.TestCase):
         self.assertRaises(ValueError, dsa.export_raw, begin=1, end=2, slot=3, page=4)
 
 
+    def test_aggregated_metric_newapi(self):
+        dda = DynatraceDatafeedNewAPI(login=self.login_exp,
+                                   passwordhash=self.passwordhash_exp,
+                                   scopemap = { "4711": ("DEADBEEFCAFEBABE", "dummycheck") })
+        dda._setMock(mock_data={'rc': 200,
+                                'body': self.json_avail_metric_success})
+        dsa = DynatraceSyntheticAPI(datafeed_api=dda)
+
+        testmonid = dda._remap_scope(4711)
+
+        # just check it's callable, we don't have test data for the new api prepared...
+        testval = dsa.get_aggregated_metric_new( metric="uxtme", monid=4711 )
 
 if __name__ == '__main__':
     unittest.main()
